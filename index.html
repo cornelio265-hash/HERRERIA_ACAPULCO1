@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herrería Acapulco | Exclusividad en Acero</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CONTROLADORES VISUALES (Hacks CSS para cambiar de "hoja") -->
+    <input type="radio" name="page-view" id="view-home" checked class="state-radio">
+    <input type="radio" name="page-view" id="view-puertas" class="state-radio">
+    <input type="radio" name="page-view" id="view-ventanas" class="state-radio">
+    <input type="radio" name="page-view" id="view-zaguanes" class="state-radio">
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <header class="header">
+        <label for="view-home" class="logo">
+            <i class="fa-solid fa-anvil ember-icon"></i>
+            <span>HERRERÍA<span class="highlight">ACAPULCO</span></span>
+        </label>
+        
+        <div class="nav-container">
+            <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+            
+            <label for="menu-toggle" class="menu-button">
+                <i class="fa-solid fa-bars icon-bars"></i>
+                <i class="fa-solid fa-xmark icon-close"></i>
+                <span>MENÚ</span>
+            </label>
+            
+            <!-- MENÚ CON INICIO, PUERTAS, VENTANAS, ZAGUANES Y PORTONES -->
+            <ul class="dropdown-menu">
+                <li><label for="view-home" class="menu-label-btn"><i class="fa-solid fa-house"></i> INICIO</label></li>
+                <li><label for="view-puertas" class="menu-label-btn"><i class="fa-solid fa-door-closed"></i> PUERTAS</label></li>
+                <li><label for="view-ventanas" class="menu-label-btn"><i class="fa-solid fa-border-all"></i> VENTANAS</label></li>
+                <li><label for="view-zaguanes" class="menu-label-btn"><i class="fa-solid fa-gate"></i> ZAGUANES Y PORTONES</label></li>
+            </ul>
+
+            <!-- ÚNICO BOTÓN DE WHATSAPP ACTIVO EN LA WEB -->
+            <a href="https://wa.me/522226083633?text=Hola%20Herrería%20Acapulco,%20quiero%20cotizar%20un%20trabajo" target="_blank" class="btn-nav-ws">
+                <i class="fa-brands fa-whatsapp"></i> COTIZA
+            </a>
+        </div>
+    </header>
+
+    <!-- PANTALLA DE INICIO (HOME) -->
+    <section class="page-section section-home">
+        <div class="hero-main">
+            <h1 class="giant-title">HERRERÍA, <span class="text-glow">ACAPULCO</span></h1>
+            <div class="herrero-frame">
+                <img src="https://cdn.phototourl.com/free/2026-07-17-994aa2d8-33b8-4065-a511-8923d2d48af7.jpg" alt="Maestro Herrero Trabajando el Acero" class="herrero-img">
+            </div>
+            <p class="home-instruction">Toca el botón de menú arriba para explorar nuestras especialidades</p>
+        </div>
+    </section>
+
+    <!-- HOJA DEDICADA: PUERTAS (VACÍA POR EL MOMENTO) -->
+    <section class="page-section section-puertas">
+        <div class="container">
+            <!-- Espacio vacío reservado para el futuro -->
+            <div class="back-home-container">
+                <label for="view-home" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</label>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOJA DEDICADA: VENTANAS (VACÍA POR EL MOMENTO) -->
+    <section class="page-section section-ventanas">
+        <div class="container">
+            <!-- Espacio vacío reservado para el futuro -->
+            <div class="back-home-container">
+                <label for="view-home" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</label>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOJA DEDICADA: ZAGUANES (VACÍA POR EL MOMENTO) -->
+    <section class="page-section section-zaguanes">
+        <div class="container">
+            <!-- Espacio vacío reservado para el futuro -->
+            <div class="back-home-container">
+                <label for="view-home" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</label>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,350 @@
+/* ==========================================================================
+   CONFIGURACIONES Y PALETA AZUL ACERO
+   ========================================================================== */
+:root {
+    --bg-dark: #060a12;
+    --bg-card: #0d1524;
+    --primary-blue: #0084ff;
+    --primary-glow: #00d4ff;
+    --steel-light: #e6effa;
+    --steel-muted: #6c869e;
+    --whatsapp-green: #25d366;
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--steel-light);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+}
+
+/* Ocultar los selectores de estado por completo */
+.state-radio {
+    display: none;
+}
+
+/* ==========================================================================
+   LOGIC IN CSS: INTERRUPTOR DE PÁGINAS DEDICADAS
+   ========================================================================== */
+.page-section {
+    display: none;
+    min-height: 100vh;
+    padding: 120px 8% 60px 8%;
+    animation: fadeInPage 0.4s ease forwards;
+}
+
+#view-home:checked ~ .section-home { display: flex; }
+#view-puertas:checked ~ .section-puertas { display: block; }
+#view-ventanas:checked ~ .section-ventanas { display: block; }
+#view-zaguanes:checked ~ .section-zaguanes { display: block; }
+
+@keyframes fadeInPage {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   HEADER & MENÚ DESPLEGABLE
+   ========================================================================== */
+.header {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 6%;
+    background: rgba(6, 10, 18, 0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--primary-blue);
+    z-index: 1000;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ember-icon {
+    color: var(--primary-blue);
+    filter: drop-shadow(0 0 8px var(--primary-blue));
+}
+
+.highlight { color: var(--primary-glow); }
+
+.nav-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.menu-checkbox { display: none; }
+
+.menu-button {
+    background: var(--bg-card);
+    border: 1px solid var(--steel-muted);
+    color: var(--steel-light);
+    padding: 10px 18px;
+    font-family: var(--font-heading);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.menu-button:hover {
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+    box-shadow: 0 0 15px rgba(0, 132, 255, 0.3);
+}
+
+.menu-button .icon-close { display: none; }
+
+/* Contenedor del Dropdown */
+.dropdown-menu {
+    position: absolute;
+    top: 60px; right: 0;
+    background: var(--bg-card);
+    border: 2px solid var(--primary-blue);
+    border-radius: 6px;
+    width: 240px;
+    padding: 8px 0;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    z-index: 1010;
+}
+
+.menu-label-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--steel-light);
+    padding: 12px 20px;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.menu-label-btn:hover {
+    background: rgba(0, 132, 255, 0.1);
+    color: var(--primary-glow);
+    padding-left: 26px;
+}
+
+/* Mostrar Menú */
+.menu-checkbox:checked ~ .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.menu-checkbox:checked ~ .menu-button .icon-bars { display: none; }
+.menu-checkbox:checked ~ .menu-button .icon-close { display: inline-block; color: var(--primary-blue); }
+
+/* ÚNICO BOTÓN DE WHATSAPP */
+.btn-nav-ws {
+    background: var(--whatsapp-green);
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-family: var(--font-heading);
+    font-weight: bold;
+    flex-shrink: 0;
+    box-shadow: 0 0 15px rgba(37, 211, 102, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-nav-ws:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(37, 211, 102, 0.6);
+}
+
+/* ==========================================================================
+   ESTILO: HOJA DE INICIO MINIMALISTA (IMAGEN COMPLETA)
+   ========================================================================== */
+.section-home {
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, #0b1a2e 0%, var(--bg-dark) 100%);
+}
+
+.hero-main {
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+}
+
+.giant-title {
+    font-family: var(--font-heading);
+    font-size: 4.5rem;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+    line-height: 1;
+}
+
+.text-glow {
+    color: var(--primary-blue);
+    text-shadow: 0 0 25px rgba(0, 132, 255, 0.6);
+}
+
+/* El marco ahora adapta su altura automáticamente a la imagen */
+.herrero-frame {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    margin: 0 auto 30px auto;
+    border-radius: 12px;
+    border: 3px solid var(--primary-blue);
+    padding: 8px;
+    background: var(--bg-card);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 132, 255, 0.2);
+}
+
+/* La imagen ahora se escala al 100% de ancho sin recortarse */
+.herrero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+    filter: grayscale(20%) contrast(110%);
+}
+
+.home-instruction {
+    font-size: 1.1rem;
+    color: var(--steel-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    animation: breathing 2s infinite ease-in-out;
+}
+
+@keyframes breathing {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.9; }
+}
+
+/* ==========================================================================
+   ESTILOS GENERALES DE LAS HOJAS DE TRABAJO (CATÁLOGO)
+   ========================================================================== */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.section-icon { color: var(--primary-blue); }
+
+.section-subtitle {
+    text-align: center;
+    color: var(--steel-muted);
+    margin-bottom: 50px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-card {
+    background: var(--bg-card);
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.portfolio-img-box {
+    position: relative;
+    height: 320px;
+    overflow: hidden;
+}
+
+.portfolio-img-box img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.portfolio-card:hover .portfolio-img-box img {
+    transform: scale(1.06);
+}
+
+.portfolio-info { 
+    padding: 25px; 
+}
+
+.portfolio-info h3 { 
+    font-family: var(--font-heading); 
+    font-size: 1.4rem; 
+    margin-bottom: 8px; 
+}
+
+.portfolio-info p { 
+    color: var(--steel-muted); 
+    font-size: 0.95rem; 
+    line-height: 1.5;
+}
+
+/* Botón inferior para regresar */
+.back-home-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-card);
+    border: 1px solid var(--primary-blue);
+    color: var(--steel-light);
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    transition: all 0.2s ease;
+}
+
+.btn-back:hover {
+    background: var(--primary-blue);
+    box-shadow: 0 0 15px rgba(0, 132, 255, 0.4);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .menu-button span { display: none; }
+    .giant-title { font-size: 2.8rem; }
+    .herrero-frame { height: auto; }
+    .section-title { font-size: 1.9rem; }
+}
