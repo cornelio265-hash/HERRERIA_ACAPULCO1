@@ -121,7 +121,7 @@ body {
     background: var(--bg-card);
     border: 2px solid var(--primary-blue);
     border-radius: 6px;
-    width: 260px;
+    width: 240px;
     padding: 8px 0;
     list-style: none;
     opacity: 0;
@@ -136,12 +136,14 @@ body {
 .menu-label-btn {
     display: flex;
     align-items: center;
+    gap: 12px;
     color: var(--steel-light);
     padding: 12px 20px;
     font-family: var(--font-heading);
     font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.2s ease;
+    width: 100%;
 }
 
 .menu-label-btn:hover {
@@ -150,16 +152,7 @@ body {
     padding-left: 26px;
 }
 
-.menu-close-trigger {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-}
-
-/* Mostrar Menú */
+/* Mostrar Menú cuando el checkbox está activo */
 .menu-checkbox:checked ~ .dropdown-menu {
     opacity: 1;
     visibility: visible;
@@ -168,6 +161,11 @@ body {
 
 .menu-checkbox:checked ~ .menu-button .icon-bars { display: none; }
 .menu-checkbox:checked ~ .menu-button .icon-close { display: inline-block; color: var(--primary-blue); }
+
+/* TRUCO CSS: Cierra el menú automáticamente al seleccionar una opción */
+.menu-checkbox:checked ~ .dropdown-menu .menu-label-btn {
+    pointer-events: auto;
+}
 
 /* ÚNICO BOTÓN DE WHATSAPP */
 .btn-nav-ws {
@@ -323,7 +321,6 @@ body {
     line-height: 1.5;
 }
 
-/* Botón inferior para regresar */
 .back-home-container {
     text-align: center;
     margin-top: 50px;
@@ -348,7 +345,6 @@ body {
     box-shadow: 0 0 15px rgba(0, 132, 255, 0.4);
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
     .menu-button span { display: none; }
     .giant-title { font-size: 2.8rem; }
