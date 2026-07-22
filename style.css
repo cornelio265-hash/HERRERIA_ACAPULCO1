@@ -37,7 +37,7 @@ body {
 .page-section {
     display: none;
     min-height: 100vh;
-    padding: 120px 8% 60px 8%;
+    padding: 100px 5% 40px 5%; /* Padding reducido para móviles */
     animation: fadeInPage 0.4s ease forwards;
 }
 
@@ -53,13 +53,13 @@ body {
 }
 
 /* ==========================================================================
-   HEADER & MENÚ DESPLEGABLE
+   HEADER & MENÚ DESPLEGABLE (RESPONSIVO)
    ========================================================================== */
 .header {
     position: fixed;
     top: 0; left: 0; width: 100%;
     display: flex; justify-content: space-between; align-items: center;
-    padding: 15px 6%;
+    padding: 12px 4%;
     background: rgba(6, 10, 18, 0.96);
     backdrop-filter: blur(10px);
     border-bottom: 2px solid var(--primary-blue);
@@ -68,12 +68,13 @@ body {
 
 .logo {
     font-family: var(--font-heading);
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     font-weight: 700;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
+    white-space: nowrap;
 }
 
 .ember-icon {
@@ -87,7 +88,7 @@ body {
     position: relative;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 8px;
 }
 
 .menu-checkbox { display: none; }
@@ -96,14 +97,16 @@ body {
     background: var(--bg-card);
     border: 1px solid var(--steel-muted);
     color: var(--steel-light);
-    padding: 10px 18px;
+    padding: 8px 12px;
     font-family: var(--font-heading);
+    font-size: 0.9rem;
     border-radius: 4px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 6px;
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .menu-button:hover {
@@ -117,12 +120,12 @@ body {
 /* Contenedor del Dropdown */
 .dropdown-menu {
     position: absolute;
-    top: 60px; right: 0;
+    top: 50px; right: 0;
     background: var(--bg-card);
     border: 2px solid var(--primary-blue);
     border-radius: 6px;
-    width: 240px;
-    padding: 8px 0;
+    width: 220px;
+    padding: 6px 0;
     list-style: none;
     opacity: 0;
     visibility: hidden;
@@ -136,11 +139,11 @@ body {
 .menu-label-btn {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     color: var(--steel-light);
-    padding: 12px 20px;
+    padding: 10px 16px;
     font-family: var(--font-heading);
-    font-size: 1.1rem;
+    font-size: 1rem;
     cursor: pointer;
     transition: all 0.2s ease;
     width: 100%;
@@ -149,10 +152,9 @@ body {
 .menu-label-btn:hover {
     background: rgba(0, 132, 255, 0.1);
     color: var(--primary-glow);
-    padding-left: 26px;
+    padding-left: 20px;
 }
 
-/* Mostrar Menú cuando el checkbox está activo */
 .menu-checkbox:checked ~ .dropdown-menu {
     opacity: 1;
     visibility: visible;
@@ -162,32 +164,31 @@ body {
 .menu-checkbox:checked ~ .menu-button .icon-bars { display: none; }
 .menu-checkbox:checked ~ .menu-button .icon-close { display: inline-block; color: var(--primary-blue); }
 
-/* TRUCO CSS: Cierra el menú automáticamente al seleccionar una opción */
-.menu-checkbox:checked ~ .dropdown-menu .menu-label-btn {
-    pointer-events: auto;
-}
-
-/* ÚNICO BOTÓN DE WHATSAPP */
+/* BOTÓN DE WHATSAPP */
 .btn-nav-ws {
     background: var(--whatsapp-green);
     color: #fff;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
     border-radius: 4px;
     font-family: var(--font-heading);
     font-weight: bold;
     flex-shrink: 0;
-    box-shadow: 0 0 15px rgba(37, 211, 102, 0.3);
+    box-shadow: 0 0 12px rgba(37, 211, 102, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .btn-nav-ws:hover {
     transform: translateY(-2px);
-    box-shadow: 0 0 25px rgba(37, 211, 102, 0.6);
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
 }
 
 /* ==========================================================================
-   ESTILO: HOJA DE INICIO MINIMALISTA (IMAGEN COMPLETA)
+   ESTILO: HOJA DE INICIO MINIMALISTA
    ========================================================================== */
 .section-home {
     align-items: center;
@@ -203,10 +204,10 @@ body {
 
 .giant-title {
     font-family: var(--font-heading);
-    font-size: 4.5rem;
-    letter-spacing: 4px;
-    margin-bottom: 30px;
-    line-height: 1;
+    font-size: 3.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    line-height: 1.1;
 }
 
 .text-glow {
@@ -218,10 +219,10 @@ body {
     width: 100%;
     max-width: 550px;
     height: auto;
-    margin: 0 auto 30px auto;
+    margin: 0 auto 20px auto;
     border-radius: 12px;
-    border: 3px solid var(--primary-blue);
-    padding: 8px;
+    border: 2px solid var(--primary-blue);
+    padding: 6px;
     background: var(--bg-card);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 132, 255, 0.2);
 }
@@ -229,13 +230,15 @@ body {
 .herrero-img {
     width: 100%;
     height: auto;
+    max-height: 65vh; /* Evita que la imagen sobrepase la pantalla en móviles */
+    object-fit: contain;
     display: block;
     border-radius: 6px;
     filter: grayscale(20%) contrast(110%);
 }
 
 .home-instruction {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     color: var(--steel-muted);
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -257,14 +260,14 @@ body {
 
 .section-title {
     font-family: var(--font-heading);
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     letter-spacing: 1px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 .section-icon { color: var(--primary-blue); }
@@ -272,58 +275,57 @@ body {
 .section-subtitle {
     text-align: center;
     color: var(--steel-muted);
-    margin-bottom: 50px;
+    font-size: 0.95rem;
+    margin-bottom: 30px;
 }
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
 }
 
 .portfolio-card {
     background: var(--bg-card);
-    border-radius: 6px;
+    border-radius: 8px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .portfolio-img-box {
     position: relative;
-    height: 320px;
+    width: 100%;
+    max-height: 350px;
     overflow: hidden;
 }
 
 .portfolio-img-box img {
     width: 100%; 
-    height: 100%; 
+    height: auto;
+    display: block;
     object-fit: cover;
     transition: transform 0.4s ease;
 }
 
-.portfolio-card:hover .portfolio-img-box img {
-    transform: scale(1.06);
-}
-
 .portfolio-info { 
-    padding: 25px; 
+    padding: 18px; 
 }
 
 .portfolio-info h3 { 
     font-family: var(--font-heading); 
-    font-size: 1.4rem; 
-    margin-bottom: 8px; 
+    font-size: 1.25rem; 
+    margin-bottom: 6px; 
 }
 
 .portfolio-info p { 
     color: var(--steel-muted); 
-    font-size: 0.95rem; 
-    line-height: 1.5;
+    font-size: 0.9rem; 
+    line-height: 1.4;
 }
 
 .back-home-container {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 35px;
 }
 
 .btn-back {
@@ -333,7 +335,8 @@ body {
     background: var(--bg-card);
     border: 1px solid var(--primary-blue);
     color: var(--steel-light);
-    padding: 12px 24px;
+    padding: 10px 20px;
+    font-size: 0.95rem;
     border-radius: 4px;
     cursor: pointer;
     font-family: var(--font-heading);
@@ -345,9 +348,42 @@ body {
     box-shadow: 0 0 15px rgba(0, 132, 255, 0.4);
 }
 
-@media (max-width: 768px) {
-    .menu-button span { display: none; }
-    .giant-title { font-size: 2.8rem; }
-    .herrero-frame { height: auto; }
-    .section-title { font-size: 1.9rem; }
+/* ==========================================================================
+   AJUSTES ESPECÍFICOS PARA PANTALLAS PEQUEÑAS (MÓVILES)
+   ========================================================================== */
+@media (max-width: 600px) {
+    .header {
+        padding: 10px 3%;
+    }
+
+    .logo span span {
+        display: none; /* En teléfonos muy pequeños simplifica el logo a "HERRERÍA" */
+    }
+
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    .giant-title { 
+        font-size: 2.2rem; 
+        margin-bottom: 15px;
+    }
+
+    .home-instruction {
+        font-size: 0.85rem;
+    }
+
+    .section-title { 
+        font-size: 1.6rem; 
+    }
+
+    .menu-button span, .btn-nav-ws span {
+        display: inline-block; /* Mantiene el texto visible */
+    }
+
+    .dropdown-menu {
+        width: 100%;
+        right: 0;
+        top: 48px;
+    }
 }
