@@ -17,6 +17,7 @@
     <input type="radio" name="page-view" id="view-puertas" class="state-radio">
     <input type="radio" name="page-view" id="view-ventanas" class="state-radio">
     <input type="radio" name="page-view" id="view-zaguanes" class="state-radio">
+    <input type="radio" name="page-view" id="view-especiales" class="state-radio">
 
     <!-- MENÚ DE NAVEGACIÓN -->
     <header class="header">
@@ -34,12 +35,33 @@
                 <span>MENÚ</span>
             </label>
             
-            <!-- MENÚ CON INICIO, PUERTAS, VENTANAS, ZAGUANES Y PORTONES -->
+            <!-- MENÚ QUE SE CIERRA AUTOMÁTICAMENTE AL ELEGIR UNA OPCIÓN -->
             <ul class="dropdown-menu">
-                <li><label for="view-home" class="menu-label-btn"><i class="fa-solid fa-house"></i> INICIO</label></li>
-                <li><label for="view-puertas" class="menu-label-btn"><i class="fa-solid fa-door-closed"></i> PUERTAS</label></li>
-                <li><label for="view-ventanas" class="menu-label-btn"><i class="fa-solid fa-border-all"></i> VENTANAS</label></li>
-                <li><label for="view-zaguanes" class="menu-label-btn"><i class="fa-solid fa-gate"></i> ZAGUANES Y PORTONES</label></li>
+                <li>
+                    <label for="view-home" class="menu-label-btn">
+                        <label for="menu-toggle" class="menu-close-trigger"><i class="fa-solid fa-house"></i> INICIO</label>
+                    </label>
+                </li>
+                <li>
+                    <label for="view-puertas" class="menu-label-btn">
+                        <label for="menu-toggle" class="menu-close-trigger"><i class="fa-solid fa-door-closed"></i> PUERTAS</label>
+                    </label>
+                </li>
+                <li>
+                    <label for="view-ventanas" class="menu-label-btn">
+                        <label for="menu-toggle" class="menu-close-trigger"><i class="fa-solid fa-border-all"></i> VENTANAS</label>
+                    </label>
+                </li>
+                <li>
+                    <label for="view-zaguanes" class="menu-label-btn">
+                        <label for="menu-toggle" class="menu-close-trigger"><i class="fa-solid fa-gate"></i> ZAGUANES Y PORTONES</label>
+                    </label>
+                </li>
+                <li>
+                    <label for="view-especiales" class="menu-label-btn">
+                        <label for="menu-toggle" class="menu-close-trigger"><i class="fa-solid fa-star"></i> ENCARGOS ESPECIALES</label>
+                    </label>
+                </li>
             </ul>
 
             <!-- ÚNICO BOTÓN DE WHATSAPP ACTIVO EN LA WEB -->
@@ -52,7 +74,7 @@
     <!-- PANTALLA DE INICIO (HOME) -->
     <section class="page-section section-home">
         <div class="hero-main">
-            <h1 class="giant-title">HERRERÍA, <span class="text-glow">ACAPULCO</span></h1>
+            <h1 class="giant-title">HERRERÍA <span class="text-glow">ACAPULCO</span></h1>
             <div class="herrero-frame">
                 <img src="https://cdn.phototourl.com/free/2026-07-17-994aa2d8-33b8-4065-a511-8923d2d48af7.jpg" alt="Maestro Herrero Trabajando el Acero" class="herrero-img">
             </div>
@@ -63,7 +85,6 @@
     <!-- HOJA DEDICADA: PUERTAS (VACÍA POR EL MOMENTO) -->
     <section class="page-section section-puertas">
         <div class="container">
-            <!-- Espacio vacío reservado para el futuro -->
             <div class="back-home-container">
                 <label for="view-home" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</label>
             </div>
@@ -73,7 +94,6 @@
     <!-- HOJA DEDICADA: VENTANAS (VACÍA POR EL MOMENTO) -->
     <section class="page-section section-ventanas">
         <div class="container">
-            <!-- Espacio vacío reservado para el futuro -->
             <div class="back-home-container">
                 <label for="view-home" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</label>
             </div>
@@ -83,7 +103,29 @@
     <!-- HOJA DEDICADA: ZAGUANES (VACÍA POR EL MOMENTO) -->
     <section class="page-section section-zaguanes">
         <div class="container">
-            <!-- Espacio vacío reservado para el futuro -->
+            <div class="back-home-container">
+                <label for="view-home" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</label>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOJA DEDICADA: ENCARGOS ESPECIALES -->
+    <section class="page-section section-especiales">
+        <div class="container">
+            <h2 class="section-title"><i class="fa-solid fa-star section-icon"></i> ENCARGOS ESPECIALES</h2>
+            <p class="section-subtitle">Mueble tipo L echo con material c100 calibre 18 fácil de adaptar</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="https://cdn.phototourl.com/free/2026-07-22-7fb12491-19a0-4c99-9eca-e96b49befe8d.jpg" alt="Mesa tipo L">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Mesa tipo L</h3>
+                    </div>
+                </div>
+            </div>
+
             <div class="back-home-container">
                 <label for="view-home" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</label>
             </div>
