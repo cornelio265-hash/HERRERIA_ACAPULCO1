@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <!-- CONTROLADORES VISUALES (Hacks CSS para cambiar de "hoja") -->
+    <!-- CONTROLADORES VISUALES (Radios de navegación) -->
     <input type="radio" name="page-view" id="view-home" checked class="state-radio">
     <input type="radio" name="page-view" id="view-puertas" class="state-radio">
     <input type="radio" name="page-view" id="view-ventanas" class="state-radio">
@@ -35,36 +35,36 @@
                 <span>MENÚ</span>
             </label>
             
-            <!-- MENÚ QUE SE CIERRA AUTOMÁTICAMENTE AL ELEGIR UNA OPCIÓN -->
+            <!-- MENÚ CORREGIDO SIN CONFLITOS DE ETIQUETAS -->
             <ul class="dropdown-menu">
                 <li>
-                    <label for="view-home" class="menu-label-btn">
-                        <label for="menu-toggle" class="menu-close-trigger"><i class="fa-solid fa-house"></i> INICIO</label>
+                    <label for="view-home" class="menu-label-btn" onclick="document.getElementById('menu-toggle').checked = false;">
+                        <i class="fa-solid fa-house"></i> INICIO
                     </label>
                 </li>
                 <li>
-                    <label for="view-puertas" class="menu-label-btn">
-                        <label for="menu-toggle" class="menu-close-trigger"><i class="fa-solid fa-door-closed"></i> PUERTAS</label>
+                    <label for="view-puertas" class="menu-label-btn" onclick="document.getElementById('menu-toggle').checked = false;">
+                        <i class="fa-solid fa-door-closed"></i> PUERTAS
                     </label>
                 </li>
                 <li>
-                    <label for="view-ventanas" class="menu-label-btn">
-                        <label for="menu-toggle" class="menu-close-trigger"><i class="fa-solid fa-border-all"></i> VENTANAS</label>
+                    <label for="view-ventanas" class="menu-label-btn" onclick="document.getElementById('menu-toggle').checked = false;">
+                        <i class="fa-solid fa-border-all"></i> VENTANAS
                     </label>
                 </li>
                 <li>
-                    <label for="view-zaguanes" class="menu-label-btn">
-                        <label for="menu-toggle" class="menu-close-trigger"><i class="fa-solid fa-gate"></i> ZAGUANES Y PORTONES</label>
+                    <label for="view-zaguanes" class="menu-label-btn" onclick="document.getElementById('menu-toggle').checked = false;">
+                        <i class="fa-solid fa-gate"></i> ZAGUANES Y PORTONES
                     </label>
                 </li>
                 <li>
-                    <label for="view-especiales" class="menu-label-btn">
-                        <label for="menu-toggle" class="menu-close-trigger"><i class="fa-solid fa-star"></i> ENCARGOS ESPECIALES</label>
+                    <label for="view-especiales" class="menu-label-btn" onclick="document.getElementById('menu-toggle').checked = false;">
+                        <i class="fa-solid fa-star"></i> ENCARGOS ESPECIALES
                     </label>
                 </li>
             </ul>
 
-            <!-- ÚNICO BOTÓN DE WHATSAPP ACTIVO EN LA WEB -->
+            <!-- ÚNICO BOTÓN DE WHATSAPP ACTIVO -->
             <a href="https://wa.me/522226083633?text=Hola%20Herrería%20Acapulco,%20quiero%20cotizar%20un%20trabajo" target="_blank" class="btn-nav-ws">
                 <i class="fa-brands fa-whatsapp"></i> COTIZA
             </a>
@@ -82,7 +82,7 @@
         </div>
     </section>
 
-    <!-- HOJA DEDICADA: PUERTAS (VACÍA POR EL MOMENTO) -->
+    <!-- HOJA DEDICADA: PUERTAS -->
     <section class="page-section section-puertas">
         <div class="container">
             <div class="back-home-container">
@@ -91,7 +91,7 @@
         </div>
     </section>
 
-    <!-- HOJA DEDICADA: VENTANAS (VACÍA POR EL MOMENTO) -->
+    <!-- HOJA DEDICADA: VENTANAS -->
     <section class="page-section section-ventanas">
         <div class="container">
             <div class="back-home-container">
@@ -100,7 +100,7 @@
         </div>
     </section>
 
-    <!-- HOJA DEDICADA: ZAGUANES (VACÍA POR EL MOMENTO) -->
+    <!-- HOJA DEDICADA: ZAGUANES -->
     <section class="page-section section-zaguanes">
         <div class="container">
             <div class="back-home-container">
@@ -113,15 +113,16 @@
     <section class="page-section section-especiales">
         <div class="container">
             <h2 class="section-title"><i class="fa-solid fa-star section-icon"></i> ENCARGOS ESPECIALES</h2>
-            <p class="section-subtitle">Mueble tipo L echo con material c100 calibre 18 fácil de adaptar</p>
+            <p class="section-subtitle">Proyectos personalizados a medida según el diseño y necesidad de nuestros clientes.</p>
             
             <div class="portfolio-grid">
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://cdn.phototourl.com/free/2026-07-22-7fb12491-19a0-4c99-9eca-e96b49befe8d.jpg" alt="Mesa tipo L">
+                        <img src="https://cdn.phototourl.com/free/2026-07-22-7fb12491-19a0-4c99-9eca-e96b49befe8d.jpg" alt="Mesa Tipo L">
                     </div>
                     <div class="portfolio-info">
                         <h3>Mesa tipo L</h3>
+                        <p>Estructura de herrería a medida con diseño escuadrado, alta resistencia y acabado personalizado.</p>
                     </div>
                 </div>
             </div>
