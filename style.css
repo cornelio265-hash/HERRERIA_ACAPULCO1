@@ -26,24 +26,25 @@ body {
     overflow-x: hidden;
 }
 
-/* Ocultar los selectores de estado por completo */
+/* Ocultar los selectores de estado */
 .state-radio {
     display: none;
 }
 
 /* ==========================================================================
-   LOGIC IN CSS: INTERRUPTOR DE PÁGINAS DEDICADAS
+   Navegación entre páginas (Pure CSS)
    ========================================================================== */
 .page-section {
     display: none;
     min-height: 100vh;
-    padding: 100px 5% 40px 5%; /* Padding reducido para móviles */
+    padding: 100px 5% 40px 5%;
     animation: fadeInPage 0.4s ease forwards;
 }
 
 #view-home:checked ~ .section-home { display: flex; }
 #view-puertas:checked ~ .section-puertas { display: block; }
 #view-ventanas:checked ~ .section-ventanas { display: block; }
+#view-protecciones:checked ~ .section-protecciones { display: block; }
 #view-zaguanes:checked ~ .section-zaguanes { display: block; }
 #view-especiales:checked ~ .section-especiales { display: block; }
 
@@ -53,7 +54,7 @@ body {
 }
 
 /* ==========================================================================
-   HEADER & MENÚ DESPLEGABLE (RESPONSIVO)
+   HEADER Y MENÚ DESPLEGABLE
    ========================================================================== */
 .header {
     position: fixed;
@@ -117,14 +118,14 @@ body {
 
 .menu-button .icon-close { display: none; }
 
-/* Contenedor del Dropdown */
+/* Menú desplegable */
 .dropdown-menu {
     position: absolute;
     top: 50px; right: 0;
     background: var(--bg-card);
     border: 2px solid var(--primary-blue);
     border-radius: 6px;
-    width: 220px;
+    width: 230px;
     padding: 6px 0;
     list-style: none;
     opacity: 0;
@@ -188,7 +189,7 @@ body {
 }
 
 /* ==========================================================================
-   ESTILO: HOJA DE INICIO MINIMALISTA
+   PÁGINA INICIAL (HOME)
    ========================================================================== */
 .section-home {
     align-items: center;
@@ -230,7 +231,7 @@ body {
 .herrero-img {
     width: 100%;
     height: auto;
-    max-height: 65vh; /* Evita que la imagen sobrepase la pantalla en móviles */
+    max-height: 60vh;
     object-fit: contain;
     display: block;
     border-radius: 6px;
@@ -251,7 +252,7 @@ body {
 }
 
 /* ==========================================================================
-   ESTILOS GENERALES DE LAS HOJAS DE TRABAJO (CATÁLOGO)
+   CATÁLOGOS Y TARJETAS (RESPONSIVAS)
    ========================================================================== */
 .container {
     max-width: 1100px;
@@ -289,22 +290,28 @@ body {
     background: var(--bg-card);
     border-radius: 8px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-blue);
 }
 
 .portfolio-img-box {
     position: relative;
     width: 100%;
-    max-height: 350px;
-    overflow: hidden;
+    background-color: #000;
 }
 
 .portfolio-img-box img {
     width: 100%; 
     height: auto;
+    max-height: 380px;
     display: block;
     object-fit: cover;
-    transition: transform 0.4s ease;
 }
 
 .portfolio-info { 
@@ -349,36 +356,28 @@ body {
 }
 
 /* ==========================================================================
-   AJUSTES ESPECÍFICOS PARA PANTALLAS PEQUEÑAS (MÓVILES)
+   AJUSTES MÓVILES (PANTALLAS PEQUEÑAS)
    ========================================================================== */
 @media (max-width: 600px) {
     .header {
         padding: 10px 3%;
     }
 
-    .logo span span {
-        display: none; /* En teléfonos muy pequeños simplifica el logo a "HERRERÍA" */
-    }
-
     .logo {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .giant-title { 
-        font-size: 2.2rem; 
+        font-size: 2.1rem; 
         margin-bottom: 15px;
     }
 
     .home-instruction {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
 
     .section-title { 
-        font-size: 1.6rem; 
-    }
-
-    .menu-button span, .btn-nav-ws span {
-        display: inline-block; /* Mantiene el texto visible */
+        font-size: 1.5rem; 
     }
 
     .dropdown-menu {
