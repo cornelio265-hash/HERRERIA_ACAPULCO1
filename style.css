@@ -29,18 +29,18 @@ body {
     overflow-x: hidden;
 }
 
-/* Ocultar los controladores de estado (Radio inputs y Checkbox) */
+/* Ocultar los controladores de estado */
 .state-radio,
 .menu-checkbox {
     display: none;
 }
 
 /* ==========================================================================
-   2. LÓGICA DE NAVEGACIÓN PURA EN CSS (CAMBIO DE SECCIONES)
+   2. LÓGICA DE NAVEGACIÓN PURA EN CSS
    ========================================================================== */
 .page-section {
     display: none;
-    padding: 40px 20px;
+    padding: 30px 15px;
     animation: fadeIn 0.4s ease-in-out forwards;
 }
 
@@ -55,7 +55,7 @@ body {
     }
 }
 
-/* Mostrar la sección correspondiente al radio activado */
+/* Activar visibilidad según la selección del radio */
 #view-home:checked ~ .section-home,
 #view-puertas:checked ~ .section-puertas,
 #view-ventanas:checked ~ .section-ventanas,
@@ -79,25 +79,25 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 24px;
+    padding: 12px 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 }
 
 .logo {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
     letter-spacing: 1px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     color: var(--text-light);
 }
 
 .ember-icon {
     color: var(--accent-gold);
-    font-size: 1.6rem;
+    font-size: 1.5rem;
 }
 
 .highlight {
@@ -107,7 +107,7 @@ body {
 .nav-container {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
     position: relative;
 }
 
@@ -116,11 +116,11 @@ body {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     color: var(--text-light);
-    padding: 8px 16px;
+    padding: 8px 14px;
     border-radius: 6px;
     cursor: pointer;
     font-family: var(--font-heading);
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -136,7 +136,7 @@ body {
     display: none;
 }
 
-/* Menú Desplegable (Escritorio) */
+/* Menú Desplegable */
 .dropdown-menu {
     display: none;
     position: absolute;
@@ -146,7 +146,7 @@ body {
     border: 1px solid var(--border-color);
     border-radius: 8px;
     list-style: none;
-    width: 260px;
+    width: 250px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
     padding: 8px 0;
     z-index: 1001;
@@ -154,10 +154,6 @@ body {
 
 .dropdown-menu li {
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.dropdown-menu li:last-child {
-    border-bottom: none;
 }
 
 .menu-label-btn {
@@ -168,7 +164,6 @@ body {
     color: var(--text-light);
     font-family: var(--font-heading);
     font-size: 1.05rem;
-    letter-spacing: 0.5px;
     cursor: pointer;
     transition: var(--transition-fast);
 }
@@ -182,10 +177,8 @@ body {
 .menu-label-btn:hover {
     background-color: rgba(243, 156, 18, 0.15);
     color: var(--accent-gold);
-    padding-left: 25px;
 }
 
-/* Mostrar Menú cuando el Checkbox está activo */
 .menu-checkbox:checked ~ .dropdown-menu {
     display: block;
 }
@@ -199,41 +192,35 @@ body {
     color: var(--accent-gold);
 }
 
-/* Botón Cotizar WhatsApp Header */
+/* Botón WhatsApp Header */
 .btn-nav-ws {
     background: linear-gradient(135deg, #25d366, #128c7e);
     color: #fff;
     text-decoration: none;
-    padding: 8px 16px;
+    padding: 8px 14px;
     border-radius: 6px;
     font-family: var(--font-heading);
-    font-size: 1.05rem;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     gap: 8px;
     font-weight: 600;
-    transition: var(--transition-fast);
-}
-
-.btn-nav-ws:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
 }
 
 /* ==========================================================================
-   4. SECCIÓN INICIO (HOME / HERO)
+   4. SECCIÓN INICIO
    ========================================================================== */
 .hero-main {
     max-width: 900px;
-    margin: 20px auto 0;
+    margin: 10px auto 0;
     text-align: center;
 }
 
 .giant-title {
     font-family: var(--font-heading);
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-size: clamp(2.2rem, 5vw, 4rem);
     letter-spacing: 2px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-transform: uppercase;
 }
 
@@ -245,28 +232,26 @@ body {
 .herrero-frame {
     width: 100%;
     max-width: 800px;
-    margin: 0 auto 24px;
+    margin: 0 auto 20px;
     border-radius: 12px;
     overflow: hidden;
     border: 2px solid var(--border-color);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.7);
 }
 
 .herrero-img {
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover;
 }
 
 .home-instruction {
     color: var(--text-muted);
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-style: italic;
 }
 
 /* ==========================================================================
-   5. SECCIONES DE CATÁLOGO (GRID, TARJETAS E IMÁGENES)
+   5. TARJETAS DE CATÁLOGO (ESCRITORIO)
    ========================================================================== */
 .container {
     max-width: 1200px;
@@ -275,13 +260,12 @@ body {
 
 .section-title {
     font-family: var(--font-heading);
-    font-size: 2.2rem;
-    letter-spacing: 1px;
+    font-size: 2rem;
     color: var(--text-light);
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 8px;
+    gap: 10px;
+    margin-bottom: 6px;
 }
 
 .section-icon {
@@ -290,15 +274,14 @@ body {
 
 .section-subtitle {
     color: var(--text-muted);
-    margin-bottom: 30px;
-    font-size: 1.05rem;
+    margin-bottom: 25px;
 }
 
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
-    margin-bottom: 40px;
+    gap: 20px;
+    margin-bottom: 30px;
 }
 
 .portfolio-card {
@@ -306,27 +289,18 @@ body {
     border: 1px solid var(--border-color);
     border-radius: 10px;
     overflow: hidden;
-    transition: var(--transition-fast);
     display: flex;
     flex-direction: column;
 }
 
-.portfolio-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent-gold);
-    box-shadow: 0 8px 25px rgba(243, 156, 18, 0.15);
-}
-
-/* MARCO CONTENEDOR DE IMAGEN (Sin Recortes) */
+/* Contenedor de Imagen */
 .portfolio-img-box {
     width: 100%;
-    height: 320px;
-    background-color: #0a0b0d;
-    overflow: hidden;
+    height: 300px;
+    background-color: #000;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid var(--border-color);
 }
 
 .portfolio-img-box img {
@@ -334,35 +308,25 @@ body {
     max-height: 100%;
     width: auto;
     height: auto;
-    object-fit: contain; /* Garantiza que las fotos salgan completas */
-    transition: transform 0.4s ease;
-}
-
-.portfolio-card:hover .portfolio-img-box img {
-    transform: scale(1.04);
+    object-fit: contain;
 }
 
 .portfolio-info {
-    padding: 18px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+    padding: 16px;
 }
 
 .portfolio-info h3 {
     font-family: var(--font-heading);
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     color: var(--accent-gold);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .portfolio-info p {
     color: var(--text-muted);
     font-size: 0.95rem;
-    line-height: 1.4;
 }
 
-/* Botón Volver al Inicio */
 .back-home-container {
     text-align: center;
     margin-top: 20px;
@@ -373,62 +337,37 @@ body {
 .btn-back {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     color: var(--text-light);
-    padding: 10px 24px;
+    padding: 10px 20px;
     border-radius: 6px;
     font-family: var(--font-heading);
-    font-size: 1.1rem;
+    font-size: 1rem;
     cursor: pointer;
-    transition: var(--transition-fast);
-}
-
-.btn-back:hover {
-    background-color: var(--accent-gold);
-    color: #000;
-    border-color: var(--accent-gold);
 }
 
 /* ==========================================================================
-   6. RESPONSIVO PARA MÓVILES (SCROLL EN MENÚ + ALTURA DE FOTOS)
+   6. RESPONSIVO EXCLUSIVO PARA CELULARES
    ========================================================================== */
 @media (max-width: 768px) {
-
-    /* Permitir que el contenedor de la imagen crezca dinámicamente según la foto */
-    .portfolio-img-box {
-        height: auto !important;       /* Elimina la altura fija */
-        min-height: auto !important;   /* Elimina la restricción mínima */
-        max-height: none !important;   /* Elimina el límite de altura */
-        padding: 0;
-        background-color: transparent;
-    }
-
-    .portfolio-img-box img {
-        width: 100% !important;        /* Ocupa todo el ancho disponible */
-        height: auto !important;       /* La altura se ajusta sola proporcionalmente */
-        max-height: none !important;
-        object-fit: unset !important;  /* Desactiva el recorte por completo */
-        display: block;
-    }
-
-}
-    /* MENÚ MÓVIL CON SCROLL INTERNO */
+    
+    /* MENÚ MÓVIL DE PANTALLA COMPLETA CON SCROLL */
     .dropdown-menu {
         position: fixed;
         top: 60px;
-        right: 12px;
-        left: 12px;
+        right: 10px;
+        left: 10px;
         width: auto;
-        max-height: calc(85vh - 60px);
-        overflow-y: auto;              /* Muestra scroll para ver opciones inferiores */
+        max-height: 80vh;
+        overflow-y: auto !important;
         -webkit-overflow-scrolling: touch;
         border: 2px solid var(--accent-gold);
     }
 
     .menu-label-btn {
-        padding: 14px 18px;
+        padding: 14px 16px;
         font-size: 1.1rem;
     }
 
@@ -436,15 +375,20 @@ body {
         grid-template-columns: 1fr;
     }
 
-    /* AJUSTE PROPORCIONAL DE FOTOS EN CELULARES */
+    /* FIX DEFINITIVO DE IMÁGENES EN MÓVIL: Muestra fotos completas sin cortar */
     .portfolio-img-box {
-        height: 65vw;
-        max-height: 280px;
-        min-height: 220px;
-        padding: 6px;
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        background-color: transparent !important;
     }
 
     .portfolio-img-box img {
-        border-radius: 4px;
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+        max-height: none !important;
+        object-fit: unset !important;
+        display: block;
     }
 }
