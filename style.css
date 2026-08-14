@@ -395,18 +395,25 @@ body {
    6. RESPONSIVO PARA MÓVILES (SCROLL EN MENÚ + ALTURA DE FOTOS)
    ========================================================================== */
 @media (max-width: 768px) {
-    .header {
-        padding: 10px 16px;
+
+    /* Permitir que el contenedor de la imagen crezca dinámicamente según la foto */
+    .portfolio-img-box {
+        height: auto !important;       /* Elimina la altura fija */
+        min-height: auto !important;   /* Elimina la restricción mínima */
+        max-height: none !important;   /* Elimina el límite de altura */
+        padding: 0;
+        background-color: transparent;
     }
 
-    .btn-nav-ws span {
-        display: none; /* Muestra solo el icono de WhatsApp en pantallas reducidas */
+    .portfolio-img-box img {
+        width: 100% !important;        /* Ocupa todo el ancho disponible */
+        height: auto !important;       /* La altura se ajusta sola proporcionalmente */
+        max-height: none !important;
+        object-fit: unset !important;  /* Desactiva el recorte por completo */
+        display: block;
     }
 
-    .btn-nav-ws {
-        padding: 8px 12px;
-    }
-
+}
     /* MENÚ MÓVIL CON SCROLL INTERNO */
     .dropdown-menu {
         position: fixed;
