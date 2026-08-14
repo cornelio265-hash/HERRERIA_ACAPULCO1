@@ -391,4 +391,25 @@ body {
         object-fit: unset !important;
         display: block;
     }
+    /* ==========================================================================
+   FIX DIRECTO PARA IMÁGENES CORTADAS
+   ========================================================================== */
+
+/* Aplica directo a cualquier imagen dentro de las tarjetas */
+.portfolio-card img, 
+.portfolio-img-box img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    min-height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+/* Ajuste del contenedor de la tarjeta */
+.portfolio-img-box {
+    height: auto !important;
+    min-height: auto !important;
+    background-color: transparent !important;
+}
 }
