@@ -1,17 +1,18 @@
 /* ==========================================================================
-   CONFIGURACIONES Y PALETA AZUL ACERO / INDUSTRIAL
+   1. CONFIGURACIÓN GENERAL Y VARIABLES
    ========================================================================== */
 :root {
-    --bg-dark: #060a12;
-    --bg-card: #0d1524;
-    --bg-card-hover: #121e33;
-    --primary-blue: #0084ff;
-    --primary-glow: #00d4ff;
-    --steel-light: #e6effa;
-    --steel-muted: #8ba2b8;
-    --whatsapp-green: #25d366;
+    --bg-main: #0e0f12;
+    --bg-card: #181a20;
+    --bg-header: #12141a;
+    --accent-gold: #f39c12;
+    --accent-glow: #e67e22;
+    --text-light: #f5f6fa;
+    --text-muted: #a0a5b5;
+    --border-color: #2c303e;
     --font-heading: 'Oswald', sans-serif;
     --font-body: 'Roboto', sans-serif;
+    --transition-fast: 0.25s ease;
 }
 
 * {
@@ -20,47 +21,33 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    background-color: var(--bg-dark);
-    color: var(--steel-light);
+    background-color: var(--bg-main);
+    color: var(--text-light);
     font-family: var(--font-body);
-    overflow-x: hidden;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* Ocultar los radio buttons controladores */
-.state-radio {
+/* Ocultar los controladores de estado (Radio inputs) */
+.state-radio,
+.menu-checkbox {
     display: none;
 }
 
 /* ==========================================================================
-   NAVEGACIÓN DE PÁGINAS (Pure CSS View Switcher)
+   2. LÓGICA DE NAVEGACIÓN PURA EN CSS (CAMBIO DE SECCIONES)
    ========================================================================== */
 .page-section {
     display: none;
-    min-height: 100vh;
-    padding: 110px 5% 50px 5%;
-    animation: fadeInPage 0.4s ease forwards;
+    padding: 40px 20px;
+    animation: fadeIn 0.4s ease-in-out forwards;
 }
 
-/* Reglas de visibilidad según la pestaña seleccionada */
-#view-home:checked ~ .section-home { display: flex; }
-#view-puertas:checked ~ .section-puertas { display: block; }
-#view-ventanas:checked ~ .section-ventanas { display: block; }
-#view-protecciones:checked ~ .section-protecciones { display: block; }
-#view-zaguanes:checked ~ .section-zaguanes { display: block; }
-#view-escaleras:checked ~ .section-escaleras { display: block; }
-#view-barandales:checked ~ .section-barandales { display: block; }
-#view-especiales:checked ~ .section-especiales { display: block; }
-
-@keyframes fadeInPage {
+@keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(12px);
+        transform: translateY(10px);
     }
     to {
         opacity: 1;
@@ -68,429 +55,378 @@ body {
     }
 }
 
+/* Mostrar la sección correspondiente al radio activado */
+#view-home:checked ~ .section-home,
+#view-puertas:checked ~ .section-puertas,
+#view-ventanas:checked ~ .section-ventanas,
+#view-protecciones:checked ~ .section-protecciones,
+#view-zaguanes:checked ~ .section-zaguanes,
+#view-escaleras:checked ~ .section-escaleras,
+#view-barandales:checked ~ .section-barandales,
+#view-especiales:checked ~ .section-especiales {
+    display: block;
+}
+
 /* ==========================================================================
-   HEADER Y MENÚ DESPLEGABLE
+   3. HEADER Y MENÚ DE NAVEGACIÓN
    ========================================================================== */
 .header {
-    position: fixed;
-    top: 0; 
-    left: 0; 
-    width: 100%;
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center;
-    padding: 12px 4%;
-    background: rgba(6, 10, 18, 0.95);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 2px solid var(--primary-blue);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
     z-index: 1000;
+    background-color: var(--bg-header);
+    border-bottom: 2px solid var(--accent-gold);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 }
 
 .logo {
     font-family: var(--font-heading);
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 700;
+    letter-spacing: 1px;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 10px;
-    white-space: nowrap;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    color: var(--text-light);
 }
 
 .ember-icon {
-    color: var(--primary-blue);
-    filter: drop-shadow(0 0 8px var(--primary-blue));
+    color: var(--accent-gold);
+    font-size: 1.6rem;
 }
 
-.highlight { 
-    color: var(--primary-glow); 
+.highlight {
+    color: var(--accent-gold);
 }
 
 .nav-container {
-    position: relative;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
+    position: relative;
 }
 
-.menu-checkbox { 
-    display: none; 
-}
-
+/* Botón de Menú */
 .menu-button {
     background: var(--bg-card);
-    border: 1px solid var(--steel-muted);
-    color: var(--steel-light);
-    padding: 8px 14px;
-    font-family: var(--font-heading);
-    font-size: 0.95rem;
-    letter-spacing: 0.5px;
-    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    color: var(--text-light);
+    padding: 8px 16px;
+    border-radius: 6px;
     cursor: pointer;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
     display: flex;
     align-items: center;
     gap: 8px;
-    transition: all 0.3s ease;
-    white-space: nowrap;
+    transition: var(--transition-fast);
 }
 
 .menu-button:hover {
-    border-color: var(--primary-blue);
-    color: var(--primary-blue);
-    box-shadow: 0 0 15px rgba(0, 132, 255, 0.3);
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
 }
 
-.menu-button .icon-close { 
-    display: none; 
+.icon-close {
+    display: none;
 }
 
-/* Menú Desplegable Pure CSS */
+/* Menú Desplegable */
 .dropdown-menu {
+    display: none;
     position: absolute;
-    top: calc(100% + 10px); 
+    top: calc(100% + 12px);
     right: 0;
-    background: var(--bg-card);
-    border: 2px solid var(--primary-blue);
-    border-radius: 6px;
-    width: 250px;
-    padding: 8px 0;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
     list-style: none;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    display: flex;
-    flex-direction: column;
+    width: 260px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-    z-index: 1010;
+    padding: 8px 0;
+    z-index: 1001;
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
 }
 
 .menu-label-btn {
     display: flex;
     align-items: center;
     gap: 12px;
-    color: var(--steel-light);
-    padding: 10px 18px;
+    padding: 12px 20px;
+    color: var(--text-light);
     font-family: var(--font-heading);
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     letter-spacing: 0.5px;
     cursor: pointer;
-    transition: all 0.2s ease;
-    width: 100%;
+    transition: var(--transition-fast);
 }
 
 .menu-label-btn i {
-    width: 18px;
+    color: var(--accent-gold);
+    width: 20px;
     text-align: center;
-    color: var(--primary-blue);
 }
 
 .menu-label-btn:hover {
-    background: rgba(0, 132, 255, 0.12);
-    color: var(--primary-glow);
-    padding-left: 24px;
+    background-color: rgba(243, 156, 18, 0.15);
+    color: var(--accent-gold);
+    padding-left: 25px;
 }
 
-/* Toggle del menú desplegable */
+/* Mostrar Menú cuando el Checkbox está activo */
 .menu-checkbox:checked ~ .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+    display: block;
 }
 
-.menu-checkbox:checked ~ .menu-button .icon-bars { display: none; }
-.menu-checkbox:checked ~ .menu-button .icon-close { display: inline-block; color: var(--primary-blue); }
+.menu-checkbox:checked ~ .menu-button .icon-bars {
+    display: none;
+}
 
-/* Botón WhatsApp Nav */
+.menu-checkbox:checked ~ .menu-button .icon-close {
+    display: inline-block;
+    color: var(--accent-gold);
+}
+
+/* Botón Cotizar WhatsApp Header */
 .btn-nav-ws {
-    background: var(--whatsapp-green);
+    background: linear-gradient(135deg, #25d366, #128c7e);
     color: #fff;
     text-decoration: none;
-    padding: 8px 14px;
-    font-size: 0.9rem;
-    border-radius: 4px;
+    padding: 8px 16px;
+    border-radius: 6px;
     font-family: var(--font-heading);
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    flex-shrink: 0;
-    box-shadow: 0 0 12px rgba(37, 211, 102, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1.05rem;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
+    font-weight: 600;
+    transition: var(--transition-fast);
 }
 
 .btn-nav-ws:hover {
     transform: translateY(-2px);
-    box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
 }
 
 /* ==========================================================================
-   PÁGINA INICIAL (HOME / HERO)
+   4. SECCIÓN INICIO (HOME / HERO)
    ========================================================================== */
-.section-home {
-    align-items: center;
-    justify-content: center;
-    background: radial-gradient(circle at center, #0b1a2e 0%, var(--bg-dark) 100%);
-}
-
 .hero-main {
+    max-width: 900px;
+    margin: 20px auto 0;
     text-align: center;
-    max-width: 800px;
-    width: 100%;
-    margin: 0 auto;
 }
 
 .giant-title {
     font-family: var(--font-heading);
-    font-size: 3.2rem;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
     letter-spacing: 2px;
     margin-bottom: 20px;
-    line-height: 1.1;
     text-transform: uppercase;
 }
 
 .text-glow {
-    color: var(--primary-blue);
-    text-shadow: 0 0 25px rgba(0, 132, 255, 0.6);
+    color: var(--accent-gold);
+    text-shadow: 0 0 15px rgba(243, 156, 18, 0.4);
 }
 
 .herrero-frame {
     width: 100%;
-    max-width: 550px;
-    margin: 0 auto 24px auto;
+    max-width: 800px;
+    margin: 0 auto 24px;
     border-radius: 12px;
-    border: 2px solid var(--primary-blue);
-    padding: 6px;
-    background: var(--bg-card);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 132, 255, 0.2);
+    overflow: hidden;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.7);
 }
 
 .herrero-img {
     width: 100%;
     height: auto;
-    max-height: 55vh;
-    object-fit: cover;
     display: block;
-    border-radius: 6px;
-    filter: grayscale(15%) contrast(110%);
+    object-fit: cover;
 }
 
 .home-instruction {
-    font-size: 0.95rem;
-    color: var(--steel-muted);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-family: var(--font-heading);
-    animation: breathing 2.5s infinite ease-in-out;
-}
-
-@keyframes breathing {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 0.95; }
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    font-style: italic;
 }
 
 /* ==========================================================================
-   CATÁLOGOS Y GALERÍA (TARJETAS RESPONSIVAS)
+   5. SECCIONES DE CATÁLOGO (GRID Y TARJETAS)
    ========================================================================== */
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    width: 100%;
 }
 
 .section-title {
     font-family: var(--font-heading);
     font-size: 2.2rem;
-    text-align: center;
-    margin-bottom: 6px;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
+    color: var(--text-light);
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 12px;
-    text-transform: uppercase;
+    margin-bottom: 8px;
 }
 
-.section-icon { 
-    color: var(--primary-blue); 
+.section-icon {
+    color: var(--accent-gold);
 }
 
 .section-subtitle {
-    text-align: center;
-    color: var(--steel-muted);
-    font-size: 0.95rem;
-    margin-bottom: 35px;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    font-size: 1.05rem;
 }
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
 }
 
 .portfolio-card {
-    background: var(--bg-card);
-    border-radius: 8px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+    transition: var(--transition-fast);
     display: flex;
     flex-direction: column;
 }
 
 .portfolio-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--primary-blue);
-    background: var(--bg-card-hover);
+    transform: translateY(-5px);
+    border-color: var(--accent-gold);
+    box-shadow: 0 8px 25px rgba(243, 156, 18, 0.15);
 }
 
 .portfolio-img-box {
-    position: relative;
     width: 100%;
+    height: 240px;
     background-color: #000;
     overflow: hidden;
 }
 
 .portfolio-img-box img {
-    width: 100%; 
-    height: 320px;
-    display: block;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.4s ease;
 }
 
 .portfolio-card:hover .portfolio-img-box img {
-    transform: scale(1.04);
+    transform: scale(1.06);
 }
 
-.portfolio-info { 
-    padding: 20px; 
+.portfolio-info {
+    padding: 18px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
 
-.portfolio-info h3 { 
-    font-family: var(--font-heading); 
-    font-size: 1.3rem; 
+.portfolio-info h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--accent-gold);
     margin-bottom: 8px;
-    color: var(--steel-light);
-    letter-spacing: 0.5px;
 }
 
-.portfolio-info p { 
-    color: var(--steel-muted); 
-    font-size: 0.9rem; 
-    line-height: 1.5;
+.portfolio-info p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.4;
 }
 
 /* Botón Volver al Inicio */
 .back-home-container {
     text-align: center;
-    margin-top: 45px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
 }
 
 .btn-back {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: var(--bg-card);
-    border: 1px solid var(--primary-blue);
-    color: var(--steel-light);
-    padding: 12px 24px;
-    font-size: 0.95rem;
-    border-radius: 4px;
-    cursor: pointer;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-light);
+    padding: 10px 24px;
+    border-radius: 6px;
     font-family: var(--font-heading);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
 }
 
 .btn-back:hover {
-    background: var(--primary-blue);
-    box-shadow: 0 0 20px rgba(0, 132, 255, 0.4);
-    transform: translateY(-2px);
+    background-color: var(--accent-gold);
+    color: #000;
+    border-color: var(--accent-gold);
 }
 
 /* ==========================================================================
-   ADAPTACIÓN RESPONSIVA (DISEÑO MÓVIL Y TABLETS)
+   6. RESPONSIVO PARA MÓVILES (RESOLUCIÓN Y FIX DE SCROLL)
    ========================================================================== */
-
-/* Tablets y pantallas medianas */
-@media (max-width: 992px) {
-    .giant-title {
-        font-size: 2.6rem;
-    }
-
-    .portfolio-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 18px;
-    }
-
-    .portfolio-img-box img {
-        height: 280px;
-    }
-}
-
-/* Celulares / Pantallas Pequeñas */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .header {
-        padding: 10px 12px;
+        padding: 10px 16px;
     }
 
-    .logo {
-        font-size: 1.05rem;
-        gap: 6px;
-    }
-
-    .menu-button span {
-        display: none; /* Muestra solo el icono en pantallas muy pequeñas */
-    }
-
-    .menu-button {
-        padding: 8px 10px;
+    .logo span span {
+        display: inline;
     }
 
     .btn-nav-ws span {
-        display: none;
+        display: none; /* En celular pequeño muestra solo el icono de WhatsApp */
     }
 
     .btn-nav-ws {
-        padding: 8px 10px;
+        padding: 8px 12px;
     }
 
+    /* CORRECCIÓN PRINCIPAL PARA CELULARES: Permite Scroll en el Menú */
     .dropdown-menu {
-        width: 210px;
-        right: -10px;
+        position: fixed;
+        top: 60px;
+        right: 12px;
+        left: 12px;
+        width: auto;
+        max-height: calc(85vh - 60px); /* Evita que el menú rebase la pantalla */
+        overflow-y: auto;              /* Activa la barra de desplazamiento si no cabe */
+        -webkit-overflow-scrolling: touch; /* Scroll fluido en iPhone/iOS */
+        border: 2px solid var(--accent-gold);
     }
 
-    .giant-title {
-        font-size: 2rem;
-        margin-bottom: 15px;
-    }
-
-    .page-section {
-        padding-top: 90px;
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    .section-title {
-        font-size: 1.75rem;
+    .menu-label-btn {
+        padding: 14px 18px; /* Target táctil más grande para dedos */
+        font-size: 1.1rem;
     }
 
     .portfolio-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
     }
 
-    .portfolio-img-box img {
-        height: 260px;
+    .portfolio-img-box {
+        height: 220px;
     }
 }
