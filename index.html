@@ -4,23 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Herrería Acapulco | Exclusividad en Acero</title>
+    <!-- Fuentes Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome para Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Hoja de estilos -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- CONTROLADORES VISUALES -->
+    <!-- CONTROLADORES VISUALES (Pure CSS Navigation) -->
     <input type="radio" name="page-view" id="view-home" checked class="state-radio">
     <input type="radio" name="page-view" id="view-puertas" class="state-radio">
     <input type="radio" name="page-view" id="view-ventanas" class="state-radio">
     <input type="radio" name="page-view" id="view-protecciones" class="state-radio">
     <input type="radio" name="page-view" id="view-zaguanes" class="state-radio">
+    <input type="radio" name="page-view" id="view-escaleras" class="state-radio">
+    <input type="radio" name="page-view" id="view-barandales" class="state-radio">
     <input type="radio" name="page-view" id="view-especiales" class="state-radio">
 
-    <!-- MENÚ DE NAVEGACIÓN -->
+    <!-- MENÚ DE NAVEGACIÓN Y HEADER -->
     <header class="header">
         <label for="view-home" class="logo">
             <i class="fa-solid fa-anvil ember-icon"></i>
@@ -63,6 +68,16 @@
                     </label>
                 </li>
                 <li>
+                    <label for="view-escaleras" class="menu-label-btn" onclick="document.getElementById('menu-toggle').checked = false;">
+                        <i class="fa-solid fa-stairs"></i> ESCALERAS
+                    </label>
+                </li>
+                <li>
+                    <label for="view-barandales" class="menu-label-btn" onclick="document.getElementById('menu-toggle').checked = false;">
+                        <i class="fa-solid fa-grip-lines-vertical"></i> BARANDALES
+                    </label>
+                </li>
+                <li>
                     <label for="view-especiales" class="menu-label-btn" onclick="document.getElementById('menu-toggle').checked = false;">
                         <i class="fa-solid fa-star"></i> ENCARGOS ESPECIALES
                     </label>
@@ -75,18 +90,18 @@
         </div>
     </header>
 
-    <!-- PANTALLA DE INICIO (HOME) -->
+    <!-- INICIO (HOME) -->
     <section class="page-section section-home">
         <div class="hero-main">
             <h1 class="giant-title">HERRERÍA <span class="text-glow">ACAPULCO</span></h1>
             <div class="herrero-frame">
                 <img src="https://cdn.phototourl.com/free/2026-07-17-994aa2d8-33b8-4065-a511-8923d2d48af7.jpg" alt="Maestro Herrero Trabajando el Acero" class="herrero-img">
             </div>
-            <p class="home-instruction">Toca el botón de menú arriba para explorar nuestras especialidades</p>
+            <p class="home-instruction">Toca el menú superior para explorar nuestros trabajos</p>
         </div>
     </section>
 
-    <!-- HOJA DEDICADA: PUERTAS -->
+    <!-- PUERTAS -->
     <section class="page-section section-puertas">
         <div class="container">
             <h2 class="section-title"><i class="fa-solid fa-door-closed section-icon"></i> PUERTAS</h2>
@@ -112,6 +127,36 @@
                         <p>Estructura sólida con estética contemporánea, ideal para interiores o exteriores.</p>
                     </div>
                 </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="https://cdn.phototourl.com/free/2026-08-14-edd4895f-e12e-4f03-93b0-3dffa2d84e8c.jpg" alt="Puerta de Herrería Modelo 3">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Puerta Residencial</h3>
+                        <p>Estructura reforzada con detalles contemporáneos para accesos principales.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="https://cdn.phototourl.com/free/2026-08-14-0f7b7ac9-8be4-466d-84b8-945a39934c89.jpg" alt="Puerta de Herrería Modelo 4">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Puerta Clásica Reforzada</h3>
+                        <p>Diseño elegante y acabado de alta durabilidad contra la intemperie.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="https://cdn.phototourl.com/free/2026-08-14-36a0f283-c10d-4e18-a0f4-d4642d72f174.jpg" alt="Puerta de Herrería Modelo 5">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Puerta Arqueada / Especial</h3>
+                        <p>Diseño exclusivo a medida con acabados finos y alta resistencia.</p>
+                    </div>
+                </div>
             </div>
 
             <div class="back-home-container">
@@ -120,18 +165,61 @@
         </div>
     </section>
 
-    <!-- HOJA DEDICADA: VENTANAS -->
+    <!-- VENTANAS -->
     <section class="page-section section-ventanas">
         <div class="container">
             <h2 class="section-title"><i class="fa-solid fa-border-all section-icon"></i> VENTANAS</h2>
             <p class="section-subtitle">Marcos y estructuras de ventilación con acabados resistentes y duraderos.</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="https://cdn.phototourl.com/free/2026-08-14-bc31142f-17c0-4bc6-8243-64e8d486e76d.jpg" alt="Ventana Modelo 1">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Ventana Residencial</h3>
+                        <p>Diseño estructural en acero con acabados de alta durabilidad para iluminación y protección.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="https://cdn.phototourl.com/free/2026-08-14-dc04c457-a93a-4fae-ba11-1d225be9ff58.jpg" alt="Ventana Modelo 2">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Ventana Moderna</h3>
+                        <p>Marco de herrería reforzado con estilo contemporáneo, ideal para cualquier espacio.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="https://cdn.phototourl.com/free/2026-08-14-9a7b1816-af5a-4885-a966-fd7d7d777b82.jpg" alt="Ventana Modelo 3">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Ventana Reforzada</h3>
+                        <p>Estructura robusta con excelentes acabados y gran soporte de ventilación y seguridad.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="https://cdn.phototourl.com/free/2026-08-14-dd7ac7e4-9a30-4d5b-a053-9e9a2931e67f.jpg" alt="Ventana Modelo 4">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Ventana Panorámica / Especial</h3>
+                        <p>Diseño con amplio campo de visión, perfiles reforzados y alta durabilidad al exterior.</p>
+                    </div>
+                </div>
+            </div>
+
             <div class="back-home-container">
                 <label for="view-home" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</label>
             </div>
         </div>
     </section>
 
-    <!-- HOJA DEDICADA: PROTECCIONES -->
+    <!-- PROTECCIONES -->
     <section class="page-section section-protecciones">
         <div class="container">
             <h2 class="section-title"><i class="fa-solid fa-shield-halved section-icon"></i> PROTECCIONES</h2>
@@ -140,7 +228,7 @@
             <div class="portfolio-grid">
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://i.ibb.co/XxnBwRrc/Whats-App-Image-2026-07-31-at-10-13-55-PM.jpg" alt="Protección de Herrería Modelo 1">
+                        <img src="https://i.ibb.co/XxnBwRrc/Whats-App-Image-2026-07-31-at-10-13-55-PM.jpg" alt="Protección Modelo 1">
                     </div>
                     <div class="portfolio-info">
                         <h3>Protección Reforzada</h3>
@@ -150,11 +238,41 @@
 
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://i.ibb.co/kgv4Mty9/Whats-App-Image-2026-07-30-at-8-03-50-PM.jpg" alt="Protección de Herrería Modelo 2">
+                        <img src="https://i.ibb.co/kgv4Mty9/Whats-App-Image-2026-07-30-at-8-03-50-PM.jpg" alt="Protección Modelo 2">
                     </div>
                     <div class="portfolio-info">
                         <h3>Protección Moderna</h3>
                         <p>Estructura sólida con diseño estético para resguardar ventanas y accesos.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="https://cdn.phototourl.com/free/2026-08-14-fd85d17c-d2ad-4bdd-b34f-9b5dcbe2499e.jpg" alt="Protección Modelo 3">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Protección Residencial</h3>
+                        <p>Estructura de perfil reforzado para máxima seguridad exterior e interior.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="https://cdn.phototourl.com/free/2026-08-14-0f35e9ed-8523-4df7-9200-59db397c16f4.jpg" alt="Protección Modelo 4">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Protección de Alta Seguridad</h3>
+                        <p>Ensamblado robusto con acabados resistentes a la intemperie y la corrosión.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="https://cdn.phototourl.com/free/2026-08-14-c1c128ed-7197-4920-a6dd-c68996ea61f7.jpg" alt="Protección Modelo 5">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Protección Contemporánea</h3>
+                        <p>Diseño estético y seguro adaptable a diferentes tipos de ventanales y accesos.</p>
                     </div>
                 </div>
             </div>
@@ -165,18 +283,89 @@
         </div>
     </section>
 
-    <!-- HOJA DEDICADA: ZAGUANES -->
+    <!-- ZAGUANES -->
     <section class="page-section section-zaguanes">
         <div class="container">
             <h2 class="section-title"><i class="fa-solid fa-gate section-icon"></i> ZAGUANES Y PORTONES</h2>
-            <p class="section-subtitle">Portones de gran dimensión y diseño exclusivo para cochera y accesos.</p>
+            <p class="section-subtitle">Portones de gran dimensión y diseño exclusivo para cochera y accesos principales.</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="URL_DE_TU_IMAGEN.jpg" alt="Zaguán o Portón Modelo 1">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Zaguán / Portón Residencial</h3>
+                        <p>Diseño exclusivo en acero de gran dimensión para cochera y accesos principales.</p>
+                    </div>
+                </div>
+            </div>
+
             <div class="back-home-container">
                 <label for="view-home" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</label>
             </div>
         </div>
     </section>
 
-    <!-- HOJA DEDICADA: ENCARGOS ESPECIALES -->
+    <!-- ESCALERAS -->
+    <section class="page-section section-escaleras">
+        <div class="container">
+            <h2 class="section-title"><i class="fa-solid fa-stairs section-icon"></i> ESCALERAS</h2>
+            <p class="section-subtitle">Estructuras metálicas de alta ingeniería para interiores y exteriores.</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="https://cdn.phototourl.com/member/2026-08-14-04b944d8-dffb-4cb3-86bf-4156d399f586.jpg" alt="Escalera Metálica">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Escalera Metálica Personalizada</h3>
+                        <p>Diseño estructural robusto con soporte de alta capacidad y acabado profesional.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="back-home-container">
+                <label for="view-home" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</label>
+            </div>
+        </div>
+    </section>
+
+    <!-- BARANDALES -->
+    <section class="page-section section-barandales">
+        <div class="container">
+            <h2 class="section-title"><i class="fa-solid fa-grip-lines-vertical section-icon"></i> BARANDALES</h2>
+            <p class="section-subtitle">Protecciones y pasamanos de acero con diseños estéticos y funcionales.</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="https://cdn.phototourl.com/member/2026-08-14-a13879d3-5c98-4e52-8842-e0b3250d865f.jpg" alt="Barandal Metálico Modelo 1">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Barandal Metálico de Seguridad</h3>
+                        <p>Estructura rígida con excelente agarre y líneas arquitectónicas modernas.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="https://i.ibb.co/m5SbB0rX/Whats-App-Image-2026-08-13-at-7-06-05-PM.jpg" alt="Barandal Metálico Modelo 2">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Barandal Moderno</h3>
+                        <p>Diseño estético y reforzado en acero, ideal para escaleras, balcones o terrazas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="back-home-container">
+                <label for="view-home" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</label>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENCARGOS ESPECIALES -->
     <section class="page-section section-especiales">
         <div class="container">
             <h2 class="section-title"><i class="fa-solid fa-star section-icon"></i> ENCARGOS ESPECIALES</h2>
@@ -190,6 +379,86 @@
                     <div class="portfolio-info">
                         <h3>Mesa tipo L</h3>
                         <p>Estructura de herrería a medida, alta resistencia y acabado personalizado.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="https://cdn.phototourl.com/member/2026-08-14-9dff51f3-72e9-4632-bb93-dc4f7116c2a3.jpg" alt="Estructura Personalizada 1">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Estructura Personalizada 1</h3>
+                        <p>Diseño exclusivo bajo especificaciones del cliente con acabados de alta calidad.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="https://cdn.phototourl.com/member/2026-08-14-45a2d500-9fee-4979-bf2d-ce2d51fd04af.jpg" alt="Estructura Personalizada 2">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Estructura Personalizada 2</h3>
+                        <p>Fabricación a medida con perfiles reforzados para proyectos específicos.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="https://cdn.phototourl.com/member/2026-08-14-813a0260-3f47-414a-89e1-90e81189855c.jpg" alt="Estructura Personalizada 3">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Estructura Personalizada 3</h3>
+                        <p>Mobiliario o elemento en acero con diseño único y máxima durabilidad.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="https://cdn.phototourl.com/member/2026-08-14-e05b40a0-963d-456d-ae79-eb6269877cad.jpg" alt="Estructura Personalizada 4">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Estructura Personalizada 4</h3>
+                        <p>Solución arquitectónica en herrería adaptada a tus necesidades espaciales.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="https://cdn.phototourl.com/member/2026-08-14-12c62a58-1dae-4ebf-88f8-3de88869d1e8.jpg" alt="Estructura Personalizada 5">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Estructura Personalizada 5</h3>
+                        <p>Trabajo especial con ensamblado robusto y detalles finos de herrería.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="https://cdn.phototourl.com/member/2026-08-14-4dc3a13a-8875-4934-a72e-106c4256322d.jpg" alt="Estructura Personalizada 6">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Estructura Personalizada 6</h3>
+                        <p>Proyecto a diseño especial fabricado con perfiles y acabados de primera.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="https://cdn.phototourl.com/member/2026-08-14-8d5adc3a-4f2b-415b-b31a-d557b74dfdcd.jpg" alt="Estructura Personalizada 7">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Estructura Personalizada 7</h3>
+                        <p>Pieza sobre diseño con acabados resistentes para interior o exterior.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="https://cdn.phototourl.com/member/2026-08-14-a49da030-3c1d-48ee-a98a-9b1d30dbfa61.jpg" alt="Estructura Personalizada 8">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Estructura Personalizada 8</h3>
+                        <p>Diseño en herrería a medida con perfiles reforzados y acabado profesional.</p>
                     </div>
                 </div>
             </div>
