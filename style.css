@@ -110,6 +110,7 @@ body::after {
 #view-zaguanes:checked ~ .section-zaguanes,
 #view-escaleras:checked ~ .section-escaleras,
 #view-barandales:checked ~ .section-barandales,
+#view-tapas:checked ~ .section-tapas,
 #view-especiales:checked ~ .section-especiales {
     display: block;
 }

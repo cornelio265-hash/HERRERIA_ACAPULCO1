@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Herrería Acapulco: Puertas, ventanas, protecciones, portones y trabajos en acero de alta calidad y diseño exclusivo.">
     <title>Herrería Acapulco | Exclusividad en Acero</title>
+    
     <!-- Fuentes Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <!-- FontAwesome para Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <!-- Hoja de estilos con versión para romper el caché móvil -->
     <link rel="stylesheet" href="style.css?v=3">
 </head>
@@ -23,6 +27,7 @@
     <input type="radio" name="page-view" id="view-zaguanes" class="state-radio">
     <input type="radio" name="page-view" id="view-escaleras" class="state-radio">
     <input type="radio" name="page-view" id="view-barandales" class="state-radio">
+    <input type="radio" name="page-view" id="view-tapas" class="state-radio">
     <input type="radio" name="page-view" id="view-especiales" class="state-radio">
 
     <!-- MENÚ DE NAVEGACIÓN Y HEADER -->
@@ -78,6 +83,11 @@
                     </label>
                 </li>
                 <li>
+                    <label for="view-tapas" class="menu-label-btn" onclick="document.getElementById('menu-toggle').checked = false;">
+                        <i class="fa-solid fa-square"></i> TAPAS PARA POZOS, REGISTROS Y CISTERNAS
+                    </label>
+                </li>
+                <li>
                     <label for="view-especiales" class="menu-label-btn" onclick="document.getElementById('menu-toggle').checked = false;">
                         <i class="fa-solid fa-star"></i> ENCARGOS ESPECIALES
                     </label>
@@ -107,39 +117,39 @@
         <div class="container">
             <h2 class="section-title"><i class="fa-solid fa-door-closed section-icon"></i> PUERTAS</h2>
             <p class="section-subtitle">Diseños modernos y de alta seguridad fabricados con la mejor resistencia.</p>
-           <!-- PUERTAS 1 -->
+            
             <div class="portfolio-grid">
+                <!-- PUERTAS 1 -->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://i.ibb.co/d0PKbH7h/4c49bdc1-3531-4ccb-8cc6-093fbcc97ebf.jpg" alt="Puerta de Herrería Modelo 1">
+                        <img src="https://i.ibb.co/d0PKbH7h/4c49bdc1-3531-4ccb-8cc6-093fbcc97ebf.jpg" alt="Puerta Semi Californiana Con Vitral">
                     </div>
                     <div class="portfolio-info">
                         <h3>Puerta Semi Californiana Con Vitral</h3>
                     </div>
                 </div>
-                    <!-- PUERTAS 2 -->
+                <!-- PUERTAS 2 -->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://i.ibb.co/YFn1PWWv/Whats-App-Image-2026-07-30-at-8-04-05-PM-1.jpg" alt="Puerta de Herrería Modelo 2">
+                        <img src="https://i.ibb.co/YFn1PWWv/Whats-App-Image-2026-07-30-at-8-04-05-PM-1.jpg" alt="Puerta con Acabado en Lámina Lisa y Chapetones">
                     </div>
                     <div class="portfolio-info">
-                        <h3>Puerta con Acabado en Lámina Liza y Chapetones</h3>  
+                        <h3>Puerta con Acabado en Lámina Lisa y Chapetones</h3>  
                     </div>
                 </div>
-
-                    <!-- PUERTAS 3 -->
+                <!-- PUERTAS 3 -->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://cdn.phototourl.com/free/2026-08-14-edd4895f-e12e-4f03-93b0-3dffa2d84e8c.jpg" alt="Puerta de Herrería Modelo 3">
+                        <img src="https://cdn.phototourl.com/free/2026-08-14-edd4895f-e12e-4f03-93b0-3dffa2d84e8c.jpg" alt="Puerta Clásica con Tablero">
                     </div>
                     <div class="portfolio-info">
-                        <h3>Puerta Clasica con Tablero</h3>
+                        <h3>Puerta Clásica con Tablero</h3>
                     </div>
                 </div>
-               <!-- PUERTAS 4 -->
+                <!-- PUERTAS 4 -->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://cdn.phototourl.com/free/2026-08-14-0f7b7ac9-8be4-466d-84b8-945a39934c89.jpg" alt="Puerta de Herrería Modelo 4">
+                        <img src="https://cdn.phototourl.com/free/2026-08-14-0f7b7ac9-8be4-466d-84b8-945a39934c89.jpg" alt="Puerta Residencial con Vitral al Centro">
                     </div>
                     <div class="portfolio-info">
                         <h3>Puerta Residencial con Vitral al Centro</h3>
@@ -148,32 +158,40 @@
                 <!-- PUERTAS 5 -->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://cdn.phototourl.com/free/2026-08-14-36a0f283-c10d-4e18-a0f4-d4642d72f174.jpg" alt="Puerta de Herrería Modelo 5">
+                        <img src="https://cdn.phototourl.com/free/2026-08-14-36a0f283-c10d-4e18-a0f4-d4642d72f174.jpg" alt="Puerta Cerrada con Lámina Lisa">
                     </div>
                     <div class="portfolio-info">
-                        <h3>Puerta Cerrada con Lamina Liza</h3>
+                        <h3>Puerta Cerrada con Lámina Lisa</h3>
+                    </div>
+                </div>
+                <!-- PUERTAS 6 -->
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="https://i.ibb.co/m5PbttQP/Whats-App-Image-2026-08-15-at-5-52-36-PM.jpg" alt="Puerta clásica con acabado de medio punto Modelo A">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Puerta clásica con acabado de medio punto</h3>
+                    </div>
+                </div>
+                <!-- PUERTAS 7 -->
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="https://i.ibb.co/0yYZY968/Whats-App-Image-2026-08-16-at-12-42-00-PM-1.jpg" alt="Puerta clásica con acabado de medio punto Modelo B">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Puerta clásica con marco reforzado</h3>
+                    </div>
+                </div>
+                <!-- PUERTAS 8 -->
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="https://i.ibb.co/Ys2pZF1/Whats-App-Image-2026-08-16-at-12-42-38-PM.jpg" alt="Puerta clásica con acabado de medio punto Modelo C">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Puerta clásica con diseño ornamental</h3>
                     </div>
                 </div>
             </div>
-         <!-- PUERTAS 6 -->
-             <div class="portfolio-card">
-                    <div class="portfolio-img-box">
-                        <img src="https://ibb.co/zVtQbbKt"><img src="https://i.ibb.co/m5PbttQP/Whats-App-Image-2026-08-15-at-5-52-36-PM.jpg" alt="Puerta de Herrería Modelo 6">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Puerta clasica con acabado de medio punto </h3>
-                    </div>
-                </div>
-                
-                 <!-- PUERTAS 7 -->
-             <div class="portfolio-card">
-                    <div class="portfolio-img-box">
-                        <img src="https://ibb.co/qYm9mgcX"><img src="https://i.ibb.co/0yYZY968/Whats-App-Image-2026-08-16-at-12-42-00-PM-1.jpg" alt="Puerta de Herrería Modelo 6">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Puerta clasica con acabado de medio punto </h3>
-                    </div>
-                </div>
 
             <div class="back-home-container">
                 <label for="view-home" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</label>
@@ -186,42 +204,60 @@
         <div class="container">
             <h2 class="section-title"><i class="fa-solid fa-border-all section-icon"></i> VENTANAS</h2>
             <p class="section-subtitle">Marcos y estructuras de ventilación con acabados resistentes y duraderos.</p>
-            <!-- VENTANAS 1-->
+            
             <div class="portfolio-grid">
+                <!-- VENTANAS 1-->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://cdn.phototourl.com/free/2026-08-14-bc31142f-17c0-4bc6-8243-64e8d486e76d.jpg" alt="Ventana Modelo 1">
+                        <img src="https://cdn.phototourl.com/free/2026-08-14-bc31142f-17c0-4bc6-8243-64e8d486e76d.jpg" alt="Ventana Corrediza con protección interior">
                     </div>
                     <div class="portfolio-info">
-                        <h3>Ventana Corrediza con proteccion interior</h3>
+                        <h3>Ventana Corrediza con protección interior</h3>
                     </div>
                 </div>
-       <!-- VENTANAS 2-->
+                <!-- VENTANAS 2-->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://cdn.phototourl.com/free/2026-08-14-dc04c457-a93a-4fae-ba11-1d225be9ff58.jpg" alt="Ventana Modelo 2">
+                        <img src="https://cdn.phototourl.com/free/2026-08-14-dc04c457-a93a-4fae-ba11-1d225be9ff58.jpg" alt="Ventana de Hoja con Protección Interior">
                     </div>
                     <div class="portfolio-info">
-                        <h3>Ventana de Hoja con Proteccion Interior</h3>
+                        <h3>Ventana de Hoja con Protección Interior</h3>
                     </div>
                 </div>
-               <!-- VENTANAS 3-->
+                <!-- VENTANAS 3-->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://ibb.co/TBNWrdPk"><img src="https://i.ibb.co/gMc46ht3/Whats-App-Image-2026-08-15-at-5-52-37-PM.jpg" alt="Ventana Modelo 3">
+                        <img src="https://i.ibb.co/gMc46ht3/Whats-App-Image-2026-08-15-at-5-52-37-PM.jpg" alt="Ventana Pequeña de Medio Punto con Hoja">
                     </div>
                     <div class="portfolio-info">
-                        <h3>Ventana Pequeña  de Medio Punto con Hoja </h3>
+                        <h3>Ventana Pequeña de Medio Punto con Hoja</h3>
                     </div>
                 </div>
-
                 <!-- VENTANAS 4 -->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://cdn.phototourl.com/free/2026-08-14-dd7ac7e4-9a30-4d5b-a053-9e9a2931e67f.jpg" alt="Ventana Modelo 4">
+                        <img src="https://cdn.phototourl.com/free/2026-08-14-dd7ac7e4-9a30-4d5b-a053-9e9a2931e67f.jpg" alt="Ventana Corrediza Con Medios puntos Encontrados Modelo A">
                     </div>
                     <div class="portfolio-info">
-                        <h3>Ventana Corrediza Con Medios puntos Encontados</h3>
+                        <h3>Ventana Corrediza Con Medios Puntos Encontrados</h3>
+                    </div>
+                </div>
+                <!-- VENTANAS 5 -->
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="https://i.ibb.co/gZcKjmqG/Whats-App-Image-2026-08-16-at-12-44-06-PM-1.jpg" alt="Ventana Corrediza Con Medios puntos Encontrados Modelo B">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Ventana Corrediza Doble Hoja</h3>
+                    </div>
+                </div>
+                <!-- VENTANAS 6 -->
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="https://i.ibb.co/6RxJ7G9v/Whats-App-Image-2026-08-16-at-12-45-50-PM-1.jpg" alt="Ventana Corrediza Con Medios puntos Encontrados Modelo C">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Ventana Corrediza Panorámica</h3>
                     </div>
                 </div>
             </div>
@@ -237,50 +273,51 @@
         <div class="container">
             <h2 class="section-title"><i class="fa-solid fa-shield-halved section-icon"></i> PROTECCIONES</h2>
             <p class="section-subtitle">Protecciones reforzadas para ventanas y accesos con máxima seguridad.</p>
-            <!-- PROTECCIONES1 -->
+            
             <div class="portfolio-grid">
+                <!-- PROTECCIONES 1 -->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://i.ibb.co/XxnBwRrc/Whats-App-Image-2026-07-31-at-10-13-55-PM.jpg" alt="Protección Modelo 1">
+                        <img src="https://i.ibb.co/XxnBwRrc/Whats-App-Image-2026-07-31-at-10-13-55-PM.jpg" alt="Cubre Ventana Clásica">
                     </div>
                     <div class="portfolio-info">
-                        <h3>Cubre Ventana Clasica</h3>
+                        <h3>Cubre Ventana Clásica</h3>
                     </div>
                 </div>
-            <!-- PROTECCIONES2 -->
+                <!-- PROTECCIONES 2 -->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://i.ibb.co/kgv4Mty9/Whats-App-Image-2026-07-30-at-8-03-50-PM.jpg" alt="Protección Modelo 2">
+                        <img src="https://i.ibb.co/kgv4Mty9/Whats-App-Image-2026-07-30-at-8-03-50-PM.jpg" alt="Reja Clásica con Figuras de Rombos">
                     </div>
                     <div class="portfolio-info">
-                        <h3>Reja Clasica con Figuras de Rombos</h3>
+                        <h3>Reja Clásica con Figuras de Rombos</h3>
                     </div>
                 </div>
-               <!-- PROTECCIONES3 -->
+                <!-- PROTECCIONES 3 -->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://cdn.phototourl.com/free/2026-08-14-fd85d17c-d2ad-4bdd-b34f-9b5dcbe2499e.jpg" alt="Protección Modelo 3">
+                        <img src="https://cdn.phototourl.com/free/2026-08-14-fd85d17c-d2ad-4bdd-b34f-9b5dcbe2499e.jpg" alt="Cubre Puerta Modelo de Semi Panal">
                     </div>
                     <div class="portfolio-info">
                         <h3>Cubre Puerta Modelo de Semi Panal</h3>
                     </div>
                 </div>
-               <!-- PROTECCIONES4 -->
+                <!-- PROTECCIONES 4 -->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://cdn.phototourl.com/free/2026-08-14-0f35e9ed-8523-4df7-9200-59db397c16f4.jpg" alt="Protección Modelo 4">
+                        <img src="https://cdn.phototourl.com/free/2026-08-14-0f35e9ed-8523-4df7-9200-59db397c16f4.jpg" alt="Cubre ventana en Modelo de Semi panal">
                     </div>
                     <div class="portfolio-info">
                         <h3>Cubre ventana en Modelo de Semi panal</h3>
                     </div>
                 </div>
-                <!-- PROTECCIONES5 -->
+                <!-- PROTECCIONES 5 -->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://cdn.phototourl.com/free/2026-08-14-c1c128ed-7197-4920-a6dd-c68996ea61f7.jpg" alt="Protección Modelo 5">
+                        <img src="https://cdn.phototourl.com/free/2026-08-14-c1c128ed-7197-4920-a6dd-c68996ea61f7.jpg" alt="Protección para zotehuela">
                     </div>
                     <div class="portfolio-info">
-                        <h3>Proteccion para zoteguela</h3>
+                        <h3>Protección para zotehuela</h3>
                     </div>
                 </div>
             </div>
@@ -300,11 +337,10 @@
             <div class="portfolio-grid">
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="URL_DE_TU_IMAGEN.jpg" alt="Zaguán o Portón Modelo 1">
+                        <img src="https://i.ibb.co/LDhGYjXb/Whats-App-Image-2026-08-17-at-8-10-57-PM.jpg" alt="Zaguán o Portón Residencial">
                     </div>
                     <div class="portfolio-info">
                         <h3>Zaguán / Portón Residencial</h3>
-                        <p>Diseño exclusivo en acero de gran dimensión para cochera y accesos principales.</p>
                     </div>
                 </div>
             </div>
@@ -324,10 +360,10 @@
             <div class="portfolio-grid">
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://cdn.phototourl.com/member/2026-08-14-04b944d8-dffb-4cb3-86bf-4156d399f586.jpg" alt="Escalera Metálica">
+                        <img src="https://cdn.phototourl.com/member/2026-08-14-04b944d8-dffb-4cb3-86bf-4156d399f586.jpg" alt="Escalera Cuadrada en Forma de Caracol">
                     </div>
                     <div class="portfolio-info">
-                        <h3>Escallera Cuadrada en Forma de Caracol</h3>
+                        <h3>Escalera Cuadrada en Forma de Caracol</h3>
                     </div>
                 </div>
             </div>
@@ -343,23 +379,49 @@
         <div class="container">
             <h2 class="section-title"><i class="fa-solid fa-grip-lines-vertical section-icon"></i> BARANDALES</h2>
             <p class="section-subtitle">Protecciones y pasamanos de acero con diseños estéticos y funcionales.</p>
-             <!-- BARANDALES 1-->
+            
             <div class="portfolio-grid">
+                <!-- BARANDALES 1-->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://cdn.phototourl.com/member/2026-08-14-a13879d3-5c98-4e52-8842-e0b3250d865f.jpg" alt="Barandal Metálico Modelo 1">
+                        <img src="https://cdn.phototourl.com/member/2026-08-14-a13879d3-5c98-4e52-8842-e0b3250d865f.jpg" alt="Barandal Con Figura de Corazón Invertido y Conchas">
                     </div>
                     <div class="portfolio-info">
-                        <h3>Barandal Con Figura de Corazon Invertido y Conchas</h3>
+                        <h3>Barandal Con Figura de Corazón Invertido y Conchas</h3>
                     </div>
                 </div>
-           <!-- BARANDALES 2-->              
+                <!-- BARANDALES 2-->               
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://i.ibb.co/m5SbB0rX/Whats-App-Image-2026-08-13-at-7-06-05-PM.jpg" alt="Barandal Metálico Modelo 2">
+                        <img src="https://i.ibb.co/m5SbB0rX/Whats-App-Image-2026-08-13-at-7-06-05-PM.jpg" alt="Barandal con Figuras Estilo Serpiente">
                     </div>
                     <div class="portfolio-info">
                         <h3>Barandal con Figuras Estilo Serpiente</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="back-home-container">
+                <label for="view-home" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</label>
+            </div>
+        </div>
+    </section>
+    
+    <!-- TAPAS PARA POZOS, REGISTROS Y CISTERNAS -->
+    <section class="page-section section-tapas">
+        <div class="container">
+            <h2 class="section-title"><i class="fa-solid fa-square section-icon"></i> TAPAS PARA POZOS, REGISTROS Y CISTERNAS</h2>
+            <p class="section-subtitle">Tapas metálicas de alta resistencia y durabilidad para registros y cisternas.</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <!-- Reemplaza la URL del atributo src con la imagen real de tu trabajo -->
+                        <img src="https://i.ibb.co/6R6wPvKq/Whats-App-Image-2026-08-16-at-12-51-50-PM.jpg" alt="Tapa Reforzada para Cisterna">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Tapa Reforzada para Cisterna</h3>
+                    </div>
                 </div>
             </div>
 
@@ -374,8 +436,9 @@
         <div class="container">
             <h2 class="section-title"><i class="fa-solid fa-star section-icon"></i> ENCARGOS ESPECIALES</h2>
             <p class="section-subtitle">Mueble tipo L hecho con material C100 calibre 18, fácil de adaptar</p>
-            <!-- ENCARGOS ESPECIALES1 -->
+            
             <div class="portfolio-grid">
+                <!-- ENCARGOS ESPECIALES 1 -->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
                         <img src="https://cdn.phototourl.com/free/2026-07-22-7fb12491-19a0-4c99-9eca-e96b49befe8d.jpg" alt="Mesa Tipo L">
@@ -384,80 +447,76 @@
                         <h3>Mesa tipo L</h3>
                     </div>
                 </div>
-                <!-- ENCARGOS ESPECIALES2 -->
+                <!-- ENCARGOS ESPECIALES 2 -->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://cdn.phototourl.com/member/2026-08-14-9dff51f3-72e9-4632-bb93-dc4f7116c2a3.jpg" alt="Estructura Personalizada 1">
+                        <img src="https://cdn.phototourl.com/member/2026-08-14-9dff51f3-72e9-4632-bb93-dc4f7116c2a3.jpg" alt="Mantenimiento de Sillas">
                     </div>
                     <div class="portfolio-info">
                         <h3>Mantenimiento de Sillas</h3>
                     </div>
                 </div>
-
-                <!-- ENCARGOS ESPECIALES3 -->
+                <!-- ENCARGOS ESPECIALES 3 -->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://cdn.phototourl.com/member/2026-08-14-45a2d500-9fee-4979-bf2d-ce2d51fd04af.jpg" alt="Estructura Personalizada 2">
+                        <img src="https://cdn.phototourl.com/member/2026-08-14-45a2d500-9fee-4979-bf2d-ce2d51fd04af.jpg" alt="Porta Maceteros Rectangular A">
                     </div>
                     <div class="portfolio-info">
                         <h3>Porta Maceteros Rectangular</h3>
                     </div>
                 </div>
-                <!-- ENCARGOS ESPECIALES4 -->
+                <!-- ENCARGOS ESPECIALES 4 -->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://cdn.phototourl.com/member/2026-08-14-813a0260-3f47-414a-89e1-90e81189855c.jpg" alt="Estructura Personalizada 3">
+                        <img src="https://cdn.phototourl.com/member/2026-08-14-813a0260-3f47-414a-89e1-90e81189855c.jpg" alt="Maceteros Pequeños">
                     </div>
                     <div class="portfolio-info">
                         <h3>Maceteros Pequeños</h3>
                     </div>
                 </div>
-
-                <!-- ENCARGOS ESPECIALES5 -->
+                <!-- ENCARGOS ESPECIALES 5 -->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://cdn.phototourl.com/member/2026-08-14-e05b40a0-963d-456d-ae79-eb6269877cad.jpg" alt="Estructura Personalizada 4">
+                        <img src="https://cdn.phototourl.com/member/2026-08-14-e05b40a0-963d-456d-ae79-eb6269877cad.jpg" alt="Puerta Para Animales Domésticos">
                     </div>
                     <div class="portfolio-info">
                         <h3>Puerta Para Animales Domésticos</h3>
                     </div>
                 </div>
-
-                <!-- ENCARGOS ESPECIALES6 -->
+                <!-- ENCARGOS ESPECIALES 6 -->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://cdn.phototourl.com/member/2026-08-14-12c62a58-1dae-4ebf-88f8-3de88869d1e8.jpg" alt="Estructura Personalizada 5">
+                        <img src="https://cdn.phototourl.com/member/2026-08-14-12c62a58-1dae-4ebf-88f8-3de88869d1e8.jpg" alt="Porta Maceteros Rectangular B">
                     </div>
                     <div class="portfolio-info">
-                        <h3>Porta Maceteros Rectangular</h3>
+                        <h3>Porta Maceteros Multinivel</h3>
                     </div>
                 </div>
-                  <!-- ENCARGOS ESPECIALES7 -->
+                <!-- ENCARGOS ESPECIALES 7 -->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://cdn.phototourl.com/member/2026-08-14-4dc3a13a-8875-4934-a72e-106c4256322d.jpg" alt="Estructura Personalizada 6">
+                        <img src="https://cdn.phototourl.com/member/2026-08-14-4dc3a13a-8875-4934-a72e-106c4256322d.jpg" alt="Trompo Para Tacos">
                     </div>
                     <div class="portfolio-info">
                         <h3>Trompo Para Tacos</h3>
                     </div>
                 </div>
-                      <!-- ENCARGOS ESPECIALES8 -->
+                <!-- ENCARGOS ESPECIALES 8 -->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://cdn.phototourl.com/member/2026-08-14-8d5adc3a-4f2b-415b-b31a-d557b74dfdcd.jpg" alt="Estructura Personalizada 7">
+                        <img src="https://cdn.phototourl.com/member/2026-08-14-8d5adc3a-4f2b-415b-b31a-d557b74dfdcd.jpg" alt="Moldes de Herrería">
                     </div>
                     <div class="portfolio-info">
-                        <h3>Moldes</h3>
+                        <h3>Moldes de Herrería</h3>
                     </div>
                 </div>
-
-                <!-- ENCARGOS ESPECIALES9 -->
+                <!-- ENCARGOS ESPECIALES 9 -->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://cdn.phototourl.com/member/2026-08-14-a49da030-3c1d-48ee-a98a-9b1d30dbfa61.jpg" alt="Estructura Personalizada 8">
+                        <img src="https://cdn.phototourl.com/member/2026-08-14-a49da030-3c1d-48ee-a98a-9b1d30dbfa61.jpg" alt="Escalera De Tijera">
                     </div>
                     <div class="portfolio-info">
-                        <h3>Escalera De Tijera </h3>
+                        <h3>Escalera De Tijera</h3>
                     </div>
                 </div>
             </div>
