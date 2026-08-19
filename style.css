@@ -34,7 +34,7 @@ body {
 }
 
 /* ==========================================================================
-   NUEVO: FONDO CON EFECTO DE OLAS FLUIDAS EN CSS
+   2. FONDO CON EFECTO DE OLAS FLUIDAS EN CSS
    ========================================================================== */
 body::before,
 body::after {
@@ -57,7 +57,7 @@ body::before {
     animation: waveMotion 16s infinite linear;
 }
 
-/* Capa de Ola 2 (Contrapunto para realismo) */
+/* Capa de Ola 2 */
 body::after {
     background: radial-gradient(ellipse at center, rgba(96, 165, 250, 0.15) 0%, transparent 60%);
     border-radius: 40%;
@@ -83,7 +83,7 @@ body::after {
 }
 
 /* ==========================================================================
-   2. LÓGICA DE NAVEGACIÓN PURA EN CSS Y ANIMACIONES
+   3. LÓGICA DE NAVEGACIÓN PURA EN CSS
    ========================================================================== */
 .page-section {
     display: none;
@@ -116,7 +116,7 @@ body::after {
 }
 
 /* ==========================================================================
-   3. HEADER Y MENÚ DE NAVEGACIÓN (CON BORDER OLA ANIMADO)
+   4. HEADER Y MENÚ DE NAVEGACIÓN
    ========================================================================== */
 .header {
     position: sticky;
@@ -129,7 +129,6 @@ body::after {
     align-items: center;
     padding: 14px 24px;
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.8);
-    /* Borde inferior con efecto de ola de luz fluida */
     border-bottom: 2px solid transparent;
     background-image: linear-gradient(var(--bg-header), var(--bg-header)), 
                       linear-gradient(90deg, transparent, #1d4ed8, #3b82f6, #60a5fa, #3b82f6, #1d4ed8, transparent);
@@ -300,7 +299,7 @@ body::after {
 }
 
 /* ==========================================================================
-   4. SECCIÓN INICIO CON TEXTO CON EFECTO OLA
+   5. SECCIÓN INICIO CON TEXTO CON EFECTO OLA
    ========================================================================== */
 .hero-main {
     max-width: 900px;
@@ -317,7 +316,6 @@ body::after {
     font-weight: 700;
 }
 
-/* Texto con reflejo y resplandor de onda continua */
 .text-glow {
     background: linear-gradient(90deg, #3b82f6, #60a5fa, #93c5fd, #60a5fa, #3b82f6);
     background-size: 200% auto;
@@ -362,7 +360,7 @@ body::after {
 }
 
 /* ==========================================================================
-   5. TARJETAS DE CATÁLOGO (CON EFECTO DE OLA AL HOVER)
+   6. TARJETAS DE CATÁLOGO Y GALERÍA DE IMÁGENES (AJUSTE TOTAL + SLIDER)
    ========================================================================== */
 .container {
     max-width: 1200px;
@@ -411,7 +409,7 @@ body::after {
     position: relative;
 }
 
-/* Efecto de ola de luz al pasar el cursor sobre la tarjeta */
+/* Efecto de destello al pasar el mouse por encima de la tarjeta */
 .portfolio-card::before {
     content: "";
     position: absolute;
@@ -423,7 +421,7 @@ body::after {
     transform: skewX(-20deg);
     transition: 0.75s;
     pointer-events: none;
-    z-index: 2;
+    z-index: 5;
 }
 
 .portfolio-card:hover::before {
@@ -436,30 +434,92 @@ body::after {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7), var(--shadow-glow);
 }
 
-/* Contenedor de Imagen */
+/* Contenedor de la Imagen */
 .portfolio-img-box {
     width: 100%;
-    height: 300px;
+    height: 380px; /* Altura de la imagen en la tarjeta */
     background-color: #060a12;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     border-bottom: 1px solid var(--border-color);
+    position: relative;
 }
 
+/* Imágenes fijas / estáticas */
 .portfolio-img-box img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* <- CUBRE TODO EL ESPACIO SIN FRANJAS NEGRAS */
+    object-position: center;
     transition: var(--transition-fast);
 }
 
 .portfolio-card:hover .portfolio-img-box img {
-    transform: scale(1.04);
+    transform: scale(1.05);
 }
+
+/* ----------------------------------------------------
+   LÓGICA DE GALERÍA Y SLIDER (PURE CSS)
+---------------------------------------------------- */
+
+/* Ocultar radios */
+.portfolio-img-box input[type="radio"].galeria-check {
+    display: none !important;
+}
+
+/* Ocultar fotos del slider por defecto */
+.portfolio-img-box .foto-slider {
+    display: none !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* <- CUBRE TODO EL ESPACIO */
+    object-position: center;
+}
+
+/* Estilo para las flechas de navegación */
+.portfolio-img-box .flecha-nav {
+    display: none;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(11, 17, 32, 0.85);
+    color: #ffffff;
+    border: 1px solid var(--accent-blue);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 20;
+    font-size: 1.2rem;
+    transition: var(--transition-fast);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.9);
+}
+
+.portfolio-img-box .flecha-nav:hover {
+    background: var(--accent-blue);
+    color: #ffffff;
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Muestra solo la foto activa y su flecha según el radio activado */
+
+/* Estado 1 */
+#p1-f1:checked ~ .img-1 { display: block !important; }
+#p1-f1:checked ~ .flecha-1 { display: flex !important; }
+
+/* Estado 2 */
+#p1-f2:checked ~ .img-2 { display: block !important; }
+#p1-f2:checked ~ .flecha-2 { display: flex !important; }
+
+/* Estado 3 */
+#p1-f3:checked ~ .img-3 { display: block !important; }
+#p1-f3:checked ~ .flecha-3 { display: flex !important; }
 
 .portfolio-info {
     padding: 20px;
@@ -510,7 +570,7 @@ body::after {
 }
 
 /* ==========================================================================
-   6. RESPONSIVO EXCLUSIVO PARA CELULARES
+   7. RESPONSIVO EXCLUSIVO PARA CELULARES
    ========================================================================== */
 @media (max-width: 768px) {
     
@@ -537,20 +597,16 @@ body::after {
         gap: 20px;
     }
 
-    .portfolio-card img, 
-    .portfolio-img-box img {
-        width: 100% !important;
-        height: auto !important;
-        max-height: none !important;
-        min-height: auto !important;
-        object-fit: contain !important;
-        display: block !important;
+    .portfolio-img-box {
+        height: 320px !important;
+        background-color: #060a12 !important;
     }
 
-    .portfolio-img-box {
-        height: auto !important;
-        min-height: auto !important;
-        background-color: transparent !important;
-        border-bottom: none;
+    .portfolio-card img,
+    .portfolio-img-box .foto-slider {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important; /* Mantiene la imagen llena sin bordes en celular */
+        object-position: center !important;
     }
 }

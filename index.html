@@ -14,8 +14,66 @@
     <!-- FontAwesome para Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Hoja de estilos con versión para romper el caché móvil -->
+    <!-- Hoja de estilos -->
     <link rel="stylesheet" href="style.css?v=3">
+
+    <!-- ESTILOS INTERNOS PARA EL CAMBIO DE IMÁGENES CON FLECHA -->
+    <style>
+        /* Estilos base para las tarjetas con visor interactivo */
+        .portfolio-img-box {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Ocultar radios controladores */
+        .portfolio-img-box input[type="radio"].galeria-check {
+            display: none !important;
+        }
+
+        /* Ocultar imágenes y flechas por defecto */
+        .portfolio-img-box .foto-slider,
+        .portfolio-img-box .flecha-nav {
+            display: none;
+        }
+
+        /* Estilo visual de la flecha */
+        .portfolio-img-box .flecha-nav {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: #ffffff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 1.1rem;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .portfolio-img-box .flecha-nav:hover {
+            background: #e65100;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        /* LÓGICA DE VISIBILIDAD DE FOTOS Y FLECHAS */
+
+        /* ESTADO 1: Foto 1 activa */
+        #p1-f1:checked ~ .img-1 { display: block; }
+        #p1-f1:checked ~ .flecha-1 { display: flex; }
+
+        /* ESTADO 2: Se oculta Foto 1 y se muestra Foto 2 */
+        #p1-f2:checked ~ .img-2 { display: block; }
+        #p1-f2:checked ~ .flecha-2 { display: flex; }
+
+        /* ESTADO 3: Se oculta Foto 2 y se muestra Foto 3 */
+        #p1-f3:checked ~ .img-3 { display: block; }
+        #p1-f3:checked ~ .flecha-3 { display: flex; }
+    </style>
 </head>
 <body>
 
@@ -119,15 +177,40 @@
             <p class="section-subtitle">Diseños modernos y de alta seguridad fabricados con la mejor resistencia.</p>
             
             <div class="portfolio-grid">
-                <!-- PUERTAS 1 -->
+                
+                <!-- PUERTAS 1 (EJEMPLO CON 3 IMÁGENES IGUALES Y FLECHA) -->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <img src="https://i.ibb.co/d0PKbH7h/4c49bdc1-3531-4ccb-8cc6-093fbcc97ebf.jpg" alt="Puerta Semi Californiana Con Vitral">
+                        <!-- Radios controladores invisibles -->
+                        <input type="radio" name="galeria-puerta-1" id="p1-f1" checked class="galeria-check">
+                        <input type="radio" name="galeria-puerta-1" id="p1-f2" class="galeria-check">
+                        <input type="radio" name="galeria-puerta-1" id="p1-f3" class="galeria-check">
+
+                        <!-- Las 3 Imágenes iguales -->
+                        <img src="https://i.ibb.co/LDhGYjXb/Whats-App-Image-2026-08-17-at-8-10-57-PM.jpg" alt="Puerta Semi Californiana Con Vitral - Vista 1" class="foto-slider img-1">
+                        <img src="https://i.ibb.co/LDhGYjXb/Whats-App-Image-2026-08-17-at-8-10-57-PM.jpg" alt="Puerta Semi Californiana Con Vitral - Vista 2" class="foto-slider img-2">
+                        <img src="https://i.ibb.co/d0PKbH7h/4c49bdc1-3531-4ccb-8cc6-093fbcc97ebf.jpg" alt="Puerta Semi Californiana Con Vitral - Vista 3" class="foto-slider img-3">
+
+                        <!-- Flecha para pasar a la Foto 2 -->
+                        <label for="p1-f2" class="flecha-nav flecha-1" title="Siguiente foto">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </label>
+
+                        <!-- Flecha para pasar a la Foto 3 -->
+                        <label for="p1-f3" class="flecha-nav flecha-2" title="Siguiente foto">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </label>
+
+                        <!-- Flecha para regresar a la Foto 1 -->
+                        <label for="p1-f1" class="flecha-nav flecha-3" title="Volver al inicio">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </label>
                     </div>
                     <div class="portfolio-info">
                         <h3>Puerta Semi Californiana Con Vitral</h3>
                     </div>
                 </div>
+
                 <!-- PUERTAS 2 -->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
@@ -137,6 +220,7 @@
                         <h3>Puerta con Acabado en Lámina Lisa y Chapetones</h3>  
                     </div>
                 </div>
+
                 <!-- PUERTAS 3 -->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
@@ -146,6 +230,7 @@
                         <h3>Puerta Clásica con Tablero</h3>
                     </div>
                 </div>
+
                 <!-- PUERTAS 4 -->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
@@ -155,6 +240,7 @@
                         <h3>Puerta Residencial con Vitral al Centro</h3>
                     </div>
                 </div>
+
                 <!-- PUERTAS 5 -->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
@@ -164,6 +250,7 @@
                         <h3>Puerta Cerrada con Lámina Lisa</h3>
                     </div>
                 </div>
+
                 <!-- PUERTAS 6 -->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
@@ -173,15 +260,17 @@
                         <h3>Puerta clásica con acabado de medio punto</h3>
                     </div>
                 </div>
+
                 <!-- PUERTAS 7 -->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
                         <img src="https://i.ibb.co/0yYZY968/Whats-App-Image-2026-08-16-at-12-42-00-PM-1.jpg" alt="Puerta clásica con acabado de medio punto Modelo B">
                     </div>
                     <div class="portfolio-info">
-                        <h3>Puerta clásica con marco reforzado</h3>
+                        <h3>Puerta clásica con marco reinforced</h3>
                     </div>
                 </div>
+
                 <!-- PUERTAS 8 -->
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
@@ -416,7 +505,6 @@
             <div class="portfolio-grid">
                 <div class="portfolio-card">
                     <div class="portfolio-img-box">
-                        <!-- Reemplaza la URL del atributo src con la imagen real de tu trabajo -->
                         <img src="https://i.ibb.co/6R6wPvKq/Whats-App-Image-2026-08-16-at-12-51-50-PM.jpg" alt="Tapa Reforzada para Cisterna">
                     </div>
                     <div class="portfolio-info">
