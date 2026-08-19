@@ -360,7 +360,7 @@ body::after {
 }
 
 /* ==========================================================================
-   6. TARJETAS DE CATÁLOGO Y GALERÍA DE IMÁGENES (AJUSTE TOTAL + SLIDER)
+   6. TARJETAS DE CATÁLOGO Y GALERÍA (IMÁGENES COMPLETAS SIN RECORTAR)
    ========================================================================== */
 .container {
     max-width: 1200px;
@@ -409,7 +409,7 @@ body::after {
     position: relative;
 }
 
-/* Efecto de destello al pasar el mouse por encima de la tarjeta */
+/* Efecto de destello */
 .portfolio-card::before {
     content: "";
     position: absolute;
@@ -437,27 +437,30 @@ body::after {
 /* Contenedor de la Imagen */
 .portfolio-img-box {
     width: 100%;
-    height: 380px; /* Altura de la imagen en la tarjeta */
-    background-color: #060a12;
+    height: 380px; 
+    background-color: var(--bg-card); /* Integración de color con la tarjeta */
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     border-bottom: 1px solid var(--border-color);
     position: relative;
+    padding: 8px; /* Margen sutil para respirar */
 }
 
 /* Imágenes fijas / estáticas */
 .portfolio-img-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* <- CUBRE TODO EL ESPACIO SIN FRANJAS NEGRAS */
-    object-position: center;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* MOSTRAR FOTO 100% COMPLETA SIN RECORTAR */
     transition: var(--transition-fast);
+    border-radius: 6px;
 }
 
 .portfolio-card:hover .portfolio-img-box img {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 /* ----------------------------------------------------
@@ -472,10 +475,12 @@ body::after {
 /* Ocultar fotos del slider por defecto */
 .portfolio-img-box .foto-slider {
     display: none !important;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* <- CUBRE TODO EL ESPACIO */
-    object-position: center;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* MOSTRAR FOTO 100% COMPLETA SIN RECORTAR */
+    border-radius: 6px;
 }
 
 /* Estilo para las flechas de navegación */
@@ -485,7 +490,7 @@ body::after {
     right: 12px;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(11, 17, 32, 0.85);
+    background: rgba(11, 17, 32, 0.88);
     color: #ffffff;
     border: 1px solid var(--accent-blue);
     width: 42px;
@@ -507,17 +512,13 @@ body::after {
     transform: translateY(-50%) scale(1.1);
 }
 
-/* Muestra solo la foto activa y su flecha según el radio activado */
-
-/* Estado 1 */
+/* Muestra solo la foto activa y su flecha */
 #p1-f1:checked ~ .img-1 { display: block !important; }
 #p1-f1:checked ~ .flecha-1 { display: flex !important; }
 
-/* Estado 2 */
 #p1-f2:checked ~ .img-2 { display: block !important; }
 #p1-f2:checked ~ .flecha-2 { display: flex !important; }
 
-/* Estado 3 */
 #p1-f3:checked ~ .img-3 { display: block !important; }
 #p1-f3:checked ~ .flecha-3 { display: flex !important; }
 
@@ -598,15 +599,16 @@ body::after {
     }
 
     .portfolio-img-box {
-        height: 320px !important;
-        background-color: #060a12 !important;
+        height: 380px !important;
+        background-color: var(--bg-card) !important;
     }
 
     .portfolio-card img,
     .portfolio-img-box .foto-slider {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important; /* Mantiene la imagen llena sin bordes en celular */
-        object-position: center !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        width: auto !important;
+        height: auto !important;
+        object-fit: contain !important;
     }
 }
