@@ -5,9 +5,9 @@
     --bg-main: #0b1120;           /* Fondo azul noche / marino muy profundo */
     --bg-card: #151f32;           /* Tarjetas en tono azul oscuro contrastado */
     --bg-header: rgba(15, 23, 42, 0.92); /* Header azul medianoche semi-transparente */
-    --accent-blue: #3b82f6;       /* Azul formal principal (Royal / Cobalto) */
-    --accent-glow: rgba(59, 130, 246, 0.35); /* Resplandor azul para efectos */
-    --accent-secondary: #1d4ed8;  /* Azul marino secundario */
+    --accent-blue: #3b82f6;       /* Azul formal principal */
+    --accent-glow: rgba(59, 130, 246, 0.35); /* Resplandor azul */
+    --accent-secondary: #1d4ed8;  
     --text-light: #f8fafc;
     --text-muted: #94a3b8;
     --border-color: #1e293b;
@@ -65,18 +65,11 @@ body::after {
 }
 
 @keyframes waveMotion {
-    0% {
-        transform: rotate(0deg) translateY(0);
-    }
-    50% {
-        transform: rotate(180deg) translateY(-20px);
-    }
-    100% {
-        transform: rotate(360deg) translateY(0);
-    }
+    0% { transform: rotate(0deg) translateY(0); }
+    50% { transform: rotate(180deg) translateY(-20px); }
+    100% { transform: rotate(360deg) translateY(0); }
 }
 
-/* Ocultar los controladores de estado */
 .state-radio,
 .menu-checkbox {
     display: none;
@@ -102,7 +95,6 @@ body::after {
     }
 }
 
-/* Activar visibilidad según la selección del radio */
 #view-home:checked ~ .section-home,
 #view-puertas:checked ~ .section-puertas,
 #view-ventanas:checked ~ .section-ventanas,
@@ -360,7 +352,7 @@ body::after {
 }
 
 /* ==========================================================================
-   6. TARJETAS DE CATÁLOGO Y GALERÍA (IMÁGENES COMPLETAS SIN RECORTAR)
+   6. TARJETAS Y GALERÍA CON TRANSICIÓN SUAVE EN FOTOS
    ========================================================================== */
 .container {
     max-width: 1200px;
@@ -409,7 +401,7 @@ body::after {
     position: relative;
 }
 
-/* Efecto de destello */
+/* Efecto de destello al pasar el cursor */
 .portfolio-card::before {
     content: "";
     position: absolute;
@@ -434,29 +426,23 @@ body::after {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7), var(--shadow-glow);
 }
 
-/* Contenedor de la Imagen */
+/* Contenedor adaptable de la imagen */
 .portfolio-img-box {
     width: 100%;
-    height: 380px; 
-    background-color: var(--bg-card); /* Integración de color con la tarjeta */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: auto;
+    background-color: transparent;
+    display: block;
     overflow: hidden;
     border-bottom: 1px solid var(--border-color);
     position: relative;
-    padding: 8px; /* Margen sutil para respirar */
 }
 
-/* Imágenes fijas / estáticas */
+/* La imagen ocupa todo el ancho sin recortar nada */
 .portfolio-img-box img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain; /* MOSTRAR FOTO 100% COMPLETA SIN RECORTAR */
+    width: 100% !important;
+    height: auto !important;
+    display: block;
     transition: var(--transition-fast);
-    border-radius: 6px;
 }
 
 .portfolio-card:hover .portfolio-img-box img {
@@ -464,8 +450,22 @@ body::after {
 }
 
 /* ----------------------------------------------------
-   LÓGICA DE GALERÍA Y SLIDER (PURE CSS)
+   LÓGICA DE GALERÍA, SLIDER Y ANIMACIÓN (PURE CSS)
 ---------------------------------------------------- */
+
+/* Animación de cambio de imagen (Fade-in + Zoom suave) */
+@keyframes cambioFoto {
+    0% {
+        opacity: 0;
+        transform: scale(0.94);
+        filter: blur(2px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
 
 /* Ocultar radios */
 .portfolio-img-box input[type="radio"].galeria-check {
@@ -475,12 +475,8 @@ body::after {
 /* Ocultar fotos del slider por defecto */
 .portfolio-img-box .foto-slider {
     display: none !important;
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain; /* MOSTRAR FOTO 100% COMPLETA SIN RECORTAR */
-    border-radius: 6px;
+    width: 100% !important;
+    height: auto !important;
 }
 
 /* Estilo para las flechas de navegación */
@@ -512,15 +508,44 @@ body::after {
     transform: translateY(-50%) scale(1.1);
 }
 
-/* Muestra solo la foto activa y su flecha */
-#p1-f1:checked ~ .img-1 { display: block !important; }
-#p1-f1:checked ~ .flecha-1 { display: flex !important; }
+.portfolio-img-box .flecha-nav:active {
+    transform: translateY(-50%) scale(0.9);
+}
 
-#p1-f2:checked ~ .img-2 { display: block !important; }
-#p1-f2:checked ~ .flecha-2 { display: flex !important; }
+/* Muestra la foto activa APLICANDO LA ANIMACIÓN */
+#p1-f1:checked ~ .img-1,
+#p1-f2:checked ~ .img-2,
+#p1-f3:checked ~ .img-3,
+#p2-f1:checked ~ .img-1,
+#p2-f2:checked ~ .img-2,
+#p2-f3:checked ~ .img-3,
+#pr1-f1:checked ~ .img-1,
+#pr1-f2:checked ~ .img-2,
+#pr1-f3:checked ~ .img-3,
+#b1-f1:checked ~ .img-1,
+#b1-f2:checked ~ .img-2,
+#b1-f3:checked ~ .img-3{
+    display: block !important;
+    animation: cambioFoto 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
 
-#p1-f3:checked ~ .img-3 { display: block !important; }
-#p1-f3:checked ~ .flecha-3 { display: flex !important; }
+#p1-f1:checked ~ .flecha-1,
+#p1-f2:checked ~ .flecha-2,
+#p1-f3:checked ~ .flecha-3,
+#p2-f1:checked ~ .flecha-1,
+#p2-f2:checked ~ .flecha-2,
+#p2-f3:checked ~ .flecha-3,
+#p2-f1:checked ~ .flecha-1,
+#p2-f2:checked ~ .flecha-2,
+#p2-f3:checked ~ .flecha-3,
+#pr1-f1:checked ~ .flecha-1,
+#pr1-f2:checked ~ .flecha-2,
+#pr1-f3:checked ~ .flecha-3,
+#b1-f1:checked ~ .flecha-1,
+#b1-f2:checked ~ .flecha-2,
+#b1-f3:checked ~ .flecha-3 {
+    display: flex !important;
+}
 
 .portfolio-info {
     padding: 20px;
@@ -599,16 +624,12 @@ body::after {
     }
 
     .portfolio-img-box {
-        height: 380px !important;
-        background-color: var(--bg-card) !important;
+        height: auto !important;
     }
 
     .portfolio-card img,
     .portfolio-img-box .foto-slider {
-        max-width: 100% !important;
-        max-height: 100% !important;
-        width: auto !important;
+        width: 100% !important;
         height: auto !important;
-        object-fit: contain !important;
     }
 }
