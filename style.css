@@ -103,7 +103,10 @@ body::after {
 #view-escaleras:checked ~ .section-escaleras,
 #view-barandales:checked ~ .section-barandales,
 #view-tapas:checked ~ .section-tapas,
-#view-especiales:checked ~ .section-especiales {
+#view-especiales:checked ~ .section-especiales ,
+#view-reparaciones:checked ~ .section-reparaciones,
+#view-tejados:checked ~ .section-tejados
+{
     display: block;
 }
 
@@ -524,7 +527,15 @@ body::after {
 #pr1-f3:checked ~ .img-3,
 #b1-f1:checked ~ .img-1,
 #b1-f2:checked ~ .img-2,
-#b1-f3:checked ~ .img-3{
+#b1-f3:checked ~ .img-3,
+#rep1-f1:checked ~ .img-1, 
+#rep1-f2:checked ~ .img-2,
+#rep1-f3:checked ~ .img-3,
+#tej1-f1:checked ~ .img-1,
+#tej1-f2:checked ~ .img-2,
+#tej2-f1:checked ~ .img-1,
+#tej2-f2:checked ~ .img-2
+{
     display: block !important;
     animation: cambioFoto 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
@@ -543,7 +554,14 @@ body::after {
 #pr1-f3:checked ~ .flecha-3,
 #b1-f1:checked ~ .flecha-1,
 #b1-f2:checked ~ .flecha-2,
-#b1-f3:checked ~ .flecha-3 {
+#b1-f3:checked ~ .flecha-3,
+#rep1-f1:checked ~ .flecha-1,
+#rep1-f2:checked ~ .flecha-2,
+#rep1-f3:checked ~ .flecha-3,
+#tej1-f1:checked ~ .flecha-1,
+#tej1-f2:checked ~ .flecha-2,
+#tej2-f1:checked ~ .flecha-1,
+#tej2-f2:checked ~ .flecha-2 {
     display: flex !important;
 }
 

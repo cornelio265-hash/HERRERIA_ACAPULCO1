@@ -87,6 +87,8 @@
     <input type="radio" name="page-view" id="view-barandales" class="state-radio">
     <input type="radio" name="page-view" id="view-tapas" class="state-radio">
     <input type="radio" name="page-view" id="view-especiales" class="state-radio">
+    <input type="radio" name="page-view" id="view-reparaciones" class="state-radio">
+    <input type="radio" name="page-view" id="view-tejados" class="state-radio">
 
     <!-- MENÚ DE NAVEGACIÓN Y HEADER -->
     <header class="header">
@@ -148,6 +150,16 @@
                 <li>
                     <label for="view-especiales" class="menu-label-btn" onclick="document.getElementById('menu-toggle').checked = false;">
                         <i class="fa-solid fa-star"></i> ENCARGOS ESPECIALES
+                    </label>
+                </li>
+                <li>
+                    <label for="view-reparaciones" class="menu-label-btn" onclick="document.getElementById('menu-toggle').checked = false;">
+                        <i class="fa-solid fa-wrench"></i> REPARACIONES
+                    </label>
+                </li>
+                <li>
+                    <label for="view-tejados" class="menu-label-btn" onclick="document.getElementById('menu-toggle').checked = false;">
+                        <i class="fa-solid fa-roof"></i> TEJADOS
                     </label>
                 </li>
             </ul>
@@ -212,6 +224,15 @@
                     </div>
                     <div class="portfolio-info">
                         <h3>Puerta Residencial con Vitral al Centro</h3>
+                    </div>
+                </div>
+                <!-- PUERTAS2RECIDENCIAL  -->
+                <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <img src="https://cdn.phototourl.com/free/2026-08-24-193121e0-3506-4686-bb48-2e0c481f76ee.jpg" alt="Puerta Residencial con Vitral al Centro">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Puerta Residencial de Medio Punto Combinado</h3>
                     </div>
                 </div>
                 <!-- PUERTAS 1LAMINA LIZA -->
@@ -691,6 +712,126 @@
                     </div>
                 </div>
             </div>
+
+            <div class="back-home-container">
+                <label for="view-home" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</label>
+            </div>
+        </div>
+    </section>
+     <!-- REPARACIONES -->
+    <section class="page-section section-reparaciones">
+        <div class="container">
+            <h2 class="section-title"><i class="fa-solid fa-stairs section-icon"></i> REPARACIONES</h2>
+            <p class="section-subtitle">Servicios de reparación y mantenimiento para estructuras metálicas.</p>
+            
+            
+            <!-- REPARACIONES A ZAGUAN -->
+
+                   <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <!-- Radios controladores invisibles -->
+                        <input type="radio" name="galeria-reparaciones-1" id="rep1-f1" checked class="galeria-check">
+                        <input type="radio" name="galeria-reparaciones-1" id="rep1-f2" class="galeria-check">
+                        <input type="radio" name="galeria-reparaciones-1" id="rep1-f3" class="galeria-check">
+
+                        <!-- Las 3 Imágenes iguales -->
+                        <img src="https://cdn.phototourl.com/free/2026-08-25-e02c6d03-8889-486f-98fc-3e004ca4aade.jpg" alt="Puerta Semi Californiana Con Vitral - Vista 1" class="foto-slider img-1">
+                        <img src="https://cdn.phototourl.com/free/2026-08-25-f7d6c62d-e360-41fc-98f9-81a9f1f075cd.jpg" alt="Puerta Semi Californiana Con Vitral - Vista 2" class="foto-slider img-2">
+                        <img src="https://cdn.phototourl.com/free/2026-08-25-cd55bcce-7c68-4498-b735-29b6950ee003.jpg" alt="Puerta Semi Californiana Con Vitral - Vista 3" class="foto-slider img-3">
+
+                        <!-- Flecha para pasar a la Foto 2 -->
+                        <label for="rep1-f2" class="flecha-nav flecha-1" title="Siguiente foto">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </label>
+
+                        <!-- Flecha para pasar a la Foto 3 -->
+                        <label for="rep1-f3" class="flecha-nav flecha-2" title="Siguiente foto">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </label>
+
+                        <!-- Flecha para regresar a la Foto 1 -->
+                        <label for="rep1-f1" class="flecha-nav flecha-3" title="Volver al inicio">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </label>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>REPARACION Y MANTENIMIENTO DE ZAGUAES </h3>
+                    </div>
+                </div>
+
+            <div class="back-home-container">
+                <label for="view-home" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</label>
+            </div>
+        </div>
+    </section>
+
+     <!-- TEJADOS -->
+    <section class="page-section section-tejados">
+        <div class="container">
+            <h2 class="section-title"><i class="fa-solid fa-roof section-icon"></i> TEJADOS</h2>
+            <p class="section-subtitle">Realizamos tejados de herrería a medida para proteger y embellecer cualquier espacio exterior o interior.</p>
+            
+            
+            <!-- TEJADOS1 -->
+
+                   <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <!-- Radios controladores invisibles -->
+                        <input type="radio" name="galeria-tejados-1" id="tej1-f1" checked class="galeria-check">
+                        <input type="radio" name="galeria-tejados-1" id="tej1-f2" class="galeria-check">
+                        
+
+                        <!-- Las 3 Imágenes iguales -->
+                        <img src="https://cdn.phototourl.com/free/2026-08-25-a050c952-27e0-494d-ab0b-5613180302b5.jpg" alt="Puerta Semi Californiana Con Vitral - Vista 1" class="foto-slider img-1">
+                        <img src="https://i.ibb.co/p6M1BDg4/Whats-App-Image-2026-08-24-at-5-23-40-PM.jpg" alt="Puerta Semi Californiana Con Vitral - Vista 2" class="foto-slider img-2">
+                        
+
+                        <!-- Flecha para pasar a la Foto 2 -->
+                        <label for="tej1-f2" class="flecha-nav flecha-1" title="Siguiente foto">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </label>
+
+                        
+
+                        <!-- Flecha para regresar a la Foto 1 -->
+                        <label for="tej1-f1" class="flecha-nav flecha-2" title="Volver al inicio">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </label>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Toldo Para Puerta Principal </h3>
+                    </div>
+                </div>
+                 <!-- TEJADOS2 -->
+
+                   <div class="portfolio-card">
+                    <div class="portfolio-img-box">
+                        <!-- Radios controladores invisibles -->
+                        <input type="radio" name="galeria-tejados-2" id="tej2-f1" checked class="galeria-check">
+                        <input type="radio" name="galeria-tejados-2" id="tej2-f2" class="galeria-check">
+                        
+
+                        <!-- Las 3 Imágenes iguales -->
+                        <img src="https://i.ibb.co/ZRVkpj2M/Whats-App-Image-2026-08-24-at-5-23-40-PM-2.jpg" alt="Puerta Semi Californiana Con Vitral - Vista 1" class="foto-slider img-1">
+                        <img src="https://i.ibb.co/HLqjvYbs/Whats-App-Image-2026-08-24-at-5-23-40-PM-1.jpg" alt="Puerta Semi Californiana Con Vitral - Vista 2" class="foto-slider img-2">
+                        
+
+                        <!-- Flecha para pasar a la Foto 2 -->
+                        <label for="tej2-f2" class="flecha-nav flecha-1" title="Siguiente foto">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </label>
+
+                        
+
+                        <!-- Flecha para regresar a la Foto 1 -->
+                        <label for="tej2-f1" class="flecha-nav flecha-2" title="Volver al inicio">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </label>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Toldo Para Puerta  </h3>
+                    </div>
+                </div>
 
             <div class="back-home-container">
                 <label for="view-home" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</label>
