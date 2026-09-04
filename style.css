@@ -522,15 +522,22 @@ body::after {
 #p2-f1:checked ~ .img-1,
 #p2-f2:checked ~ .img-2,
 #p2-f3:checked ~ .img-3,
+#p3-f1:checked ~ .img-1,
+#p3-f2:checked ~ .img-2,
+#p3-f3:checked ~ .img-3,
+
 #pr1-f1:checked ~ .img-1,
 #pr1-f2:checked ~ .img-2,
 #pr1-f3:checked ~ .img-3,
+
 #b1-f1:checked ~ .img-1,
 #b1-f2:checked ~ .img-2,
 #b1-f3:checked ~ .img-3,
+
 #rep1-f1:checked ~ .img-1, 
 #rep1-f2:checked ~ .img-2,
 #rep1-f3:checked ~ .img-3,
+
 #tej1-f1:checked ~ .img-1,
 #tej1-f2:checked ~ .img-2,
 #tej2-f1:checked ~ .img-1,
@@ -549,12 +556,18 @@ body::after {
 #p2-f1:checked ~ .flecha-1,
 #p2-f2:checked ~ .flecha-2,
 #p2-f3:checked ~ .flecha-3,
+#p3-f1:checked ~ .flecha-1,
+#p3-f2:checked ~ .flecha-2,
+#p3-f3:checked ~ .flecha-3,
+
 #pr1-f1:checked ~ .flecha-1,
 #pr1-f2:checked ~ .flecha-2,
 #pr1-f3:checked ~ .flecha-3,
+
 #b1-f1:checked ~ .flecha-1,
 #b1-f2:checked ~ .flecha-2,
 #b1-f3:checked ~ .flecha-3,
+
 #rep1-f1:checked ~ .flecha-1,
 #rep1-f2:checked ~ .flecha-2,
 #rep1-f3:checked ~ .flecha-3,
