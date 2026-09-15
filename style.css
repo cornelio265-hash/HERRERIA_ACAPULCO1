@@ -525,6 +525,11 @@ body::after {
 #p3-f1:checked ~ .img-1,
 #p3-f2:checked ~ .img-2,
 #p3-f3:checked ~ .img-3,
+#p4-f1:checked ~ .img-1,
+#p4-f2:checked ~ .img-2,
+#p4-f3:checked ~ .img-3,
+#p4-f4:checked ~ .img-4,
+
 
 #pr1-f1:checked ~ .img-1,
 #pr1-f2:checked ~ .img-2,
@@ -559,6 +564,11 @@ body::after {
 #p3-f1:checked ~ .flecha-1,
 #p3-f2:checked ~ .flecha-2,
 #p3-f3:checked ~ .flecha-3,
+#p4-f1:checked ~ .flecha-1,
+#p4-f2:checked ~ .flecha-2,
+#p4-f3:checked ~ .flecha-3,
+#p4-f4:checked ~ .flecha-4,
+
 
 #pr1-f1:checked ~ .flecha-1,
 #pr1-f2:checked ~ .flecha-2,
