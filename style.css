@@ -539,6 +539,18 @@ body::after {
 #b1-f2:checked ~ .img-2,
 #b1-f3:checked ~ .img-3,
 
+#z1-f1:checked ~ .img-1,
+#z1-f2:checked ~ .img-2,
+#z1-f3:checked ~ .img-3,
+#z1-f4:checked ~ .img-4,
+#z1-f5:checked ~ .img-5,
+#z1-f6:checked ~ .img-6,
+#z1-f7:checked ~ .img-7,
+
+
+#esp-f1:checked ~ .img-1,
+#esp-f2:checked ~ .img-2,
+
 #rep1-f1:checked ~ .img-1, 
 #rep1-f2:checked ~ .img-2,
 #rep1-f3:checked ~ .img-3,
@@ -577,6 +589,18 @@ body::after {
 #b1-f1:checked ~ .flecha-1,
 #b1-f2:checked ~ .flecha-2,
 #b1-f3:checked ~ .flecha-3,
+
+#z1-f1:checked ~ .flecha-1,
+#z1-f2:checked ~ .flecha-2, 
+#z1-f3:checked ~ .flecha-3, 
+#z1-f4:checked ~ .flecha-4, 
+#z1-f5:checked ~ .flecha-5, 
+#z1-f6:checked ~ .flecha-6,
+#z1-f7:checked ~ .flecha-7, 
+
+
+#esp-f1:checked ~ .flecha-1,
+#esp-f2:checked ~ .flecha-2,
 
 #rep1-f1:checked ~ .flecha-1,
 #rep1-f2:checked ~ .flecha-2,
