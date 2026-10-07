@@ -557,7 +557,7 @@ body::after {
 
 #tej1-f1:checked ~ .img-1,
 #tej1-f2:checked ~ .img-2,
-#tej2-f1:checked ~ .img-1,
+#tej2-f1:checked ~  .img-1,
 #tej2-f2:checked ~ .img-2
 {
     display: block !important;
