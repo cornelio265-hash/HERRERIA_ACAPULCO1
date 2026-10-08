@@ -109,46 +109,7 @@ body::after {
 {
     display: block;
 }
-/* ==========================================
-   PANTALLA DE INTRO CON VIDEO (SPLASH)
-   ========================================== */
-/* ==========================================
-   PANTALLA DE INTRO CON VIDEO (SPLASH ADAPTABLE)
-   ========================================== */
-#intro-splash {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    /* 100dvh se adapta exacto a la pantalla del celular sin contar la barra del navegador */
-    height: 100vh;
-    height: 100dvh; 
-    background-color: #000000;
-    z-index: 99999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    padding: 20px; /* Evita que el video toque las orillas */
-    box-sizing: border-box;
-    transition: opacity 0.8s ease, visibility 0.8s ease;
-}
 
-#intro-splash video {
-    width: 100%;
-    max-width: 450px;
-    /* Ajusta la altura máxima para que no tape los bordes en celulares cortos */
-    max-height: 80vh;
-    max-height: 80dvh;
-    height: auto;
-    object-fit: contain; /* Garantiza que el video se escale sin cortarse */
-}
-
-/* Clase para ocultar el splash */
-#intro-splash.ocultar {
-    opacity: 0;
-    visibility: hidden;
-}
 /* ==========================================================================
    4. HEADER Y MENÚ DE NAVEGACIÓN
    ========================================================================== */
@@ -736,4 +697,44 @@ body::after {
         width: 100% !important;
         height: auto !important;
     }
+    /* ==========================================
+   RESET Y AJUSTE TOTAL DEL VIDEO DE INTRO
+   ========================================== */
+#intro-splash {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    width: 100dvw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    background-color: #000000 !important;
+    z-index: 999999 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 10px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+}
+
+#intro-splash video,
+#intro-video {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: 85vh !important;
+    max-height: 85dvh !important;
+    /* Impide que el video se estire o se deforme */
+    object-fit: contain !important; 
+    display: block !important;
+    margin: auto !important;
+}
+
+#intro-splash.ocultar {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
 }
