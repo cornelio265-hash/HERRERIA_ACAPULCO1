@@ -112,28 +112,39 @@ body::after {
 /* ==========================================
    PANTALLA DE INTRO CON VIDEO (SPLASH)
    ========================================== */
+/* ==========================================
+   PANTALLA DE INTRO CON VIDEO (SPLASH ADAPTABLE)
+   ========================================== */
 #intro-splash {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
+    /* 100dvh se adapta exacto a la pantalla del celular sin contar la barra del navegador */
     height: 100vh;
+    height: 100dvh; 
     background-color: #000000;
     z-index: 99999;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    padding: 20px; /* Evita que el video toque las orillas */
+    box-sizing: border-box;
     transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
 #intro-splash video {
     width: 100%;
-    max-width: 500px; /* Ajusta según el tamaño deseado para el video */
+    max-width: 450px;
+    /* Ajusta la altura máxima para que no tape los bordes en celulares cortos */
+    max-height: 80vh;
+    max-height: 80dvh;
     height: auto;
-    object-fit: contain;
+    object-fit: contain; /* Garantiza que el video se escale sin cortarse */
 }
 
-/* Clase para ocultar el video cuando termina de reproducirse */
+/* Clase para ocultar el splash */
 #intro-splash.ocultar {
     opacity: 0;
     visibility: hidden;
