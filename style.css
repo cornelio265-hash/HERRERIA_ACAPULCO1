@@ -732,9 +732,22 @@ body::after {
     margin: auto !important;
 }
 
+/* ==========================================
+   OCULTAR SPLASH CORRECTAMENTE
+   ========================================== */
 #intro-splash.ocultar {
     opacity: 0 !important;
     visibility: hidden !important;
     pointer-events: none !important;
+    display: none !important; /* Libera el espacio en pantalla por completo */
+}
+
+/* ==========================================
+   VISIBILIDAD DE LA SECCIÓN DE INICIO (HOME)
+   ========================================== */
+/* Si estás usando radios para la navegación (CSS tabs), 
+   asegúrate de que la sección Home esté visible cuando corresponda */
+.section-home {
+    display: block !important; /* Fuerza a que aparezca la sección Inicio */
 }
 }

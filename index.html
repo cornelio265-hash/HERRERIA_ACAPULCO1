@@ -1070,20 +1070,23 @@
 
 
     <script>
-        const introSplash = document.getElementById('intro-splash');
-        const introVideo = document.getElementById('intro-video');
+    const introSplash = document.getElementById('intro-splash');
+    const introVideo = document.getElementById('intro-video');
 
-        // Cuando el video termina de reproducirse, oculta el splash
-        introVideo.addEventListener('ended', function() {
+    function ocultarIntro() {
+        if (!introSplash.classList.contains('ocultar')) {
             introSplash.classList.add('ocultar');
-        });
+            setTimeout(() => {
+                introSplash.style.display = 'none'; // Elimina el contenedor del DOM
+            }, 800); // Espera la transición de opacidad
+        }
+    }
 
-        // Opción de respaldo: si por alguna razón falla el video, oculta el intro tras 8 segundos
-        setTimeout(() => {
-            if (!introSplash.classList.contains('ocultar')) {
-                introSplash.classList.add('ocultar');
-            }
-        }, 8000);
-    </script>
+    // Cuando el video termina
+    introVideo.addEventListener('ended', ocultarIntro);
+
+    // Respaldo de tiempo por si no reproduce el video
+    setTimeout(ocultarIntro, 8000);
+</script>
 </body>
 </html>
