@@ -1069,23 +1069,28 @@
 
 
 
-    <script>
+   <script>
     const introSplash = document.getElementById('intro-splash');
     const introVideo = document.getElementById('intro-video');
 
     function ocultarIntro() {
         if (!introSplash.classList.contains('ocultar')) {
             introSplash.classList.add('ocultar');
+            // Pausa el video en caso de que siga reproduciéndose
+            introVideo.pause();
             setTimeout(() => {
-                introSplash.style.display = 'none'; // Elimina el contenedor del DOM
-            }, 800); // Espera la transición de opacidad
+                introSplash.style.display = 'none';
+            }, 800);
         }
     }
 
-    // Cuando el video termina
+    // 1. Ocultar al hacer clic o tocar en cualquier parte de la pantalla
+    introSplash.addEventListener('click', ocultarIntro);
+
+    // 2. Ocultar cuando el video termina de forma natural
     introVideo.addEventListener('ended', ocultarIntro);
 
-    // Respaldo de tiempo por si no reproduce el video
+    // 3. Respaldo de tiempo (8 segundos) por si falla la reproducción
     setTimeout(ocultarIntro, 8000);
 </script>
 </body>
