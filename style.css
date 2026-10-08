@@ -109,7 +109,35 @@ body::after {
 {
     display: block;
 }
+/* ==========================================
+   PANTALLA DE INTRO CON VIDEO (SPLASH)
+   ========================================== */
+#intro-splash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
 
+#intro-splash video {
+    width: 100%;
+    max-width: 500px; /* Ajusta según el tamaño deseado para el video */
+    height: auto;
+    object-fit: contain;
+}
+
+/* Clase para ocultar el video cuando termina de reproducirse */
+#intro-splash.ocultar {
+    opacity: 0;
+    visibility: hidden;
+}
 /* ==========================================================================
    4. HEADER Y MENÚ DE NAVEGACIÓN
    ========================================================================== */

@@ -78,7 +78,13 @@
     
 </head>
 <body>
-
+        <!-- PANTALLA INTRO CON VIDEO -->
+    <div id="intro-splash">
+        <video id="intro-video" autoplay muted playsinline>
+            <source src="ACAPULCO (2).mp4" type="video/mp4">
+            Tu navegador no soporta el formato de video.
+        </video>
+    </div>
     <!-- CONTROLADORES VISUALES (Pure CSS Navigation) -->
     <input type="radio" name="page-view" id="view-home" checked class="state-radio">
     <input type="radio" name="page-view" id="view-puertas" class="state-radio">
@@ -170,6 +176,10 @@
                 <i class="fa-brands fa-whatsapp"></i> <span>COTIZA</span>
             </a>
         </div>
+
+
+    <!-- CONTROLADORES VISUALES (Pure CSS Navigation) -->
+    <input type="radio" name="page-view" id="view-home" checked class="state-radio">
     </header>
 
 
@@ -178,16 +188,11 @@
         <div class="hero-main">
             <h1 class="giant-title">HERRERÍA <span class="text-glow">ACAPULCO</span></h1>
             <div class="herrero-frame">
-    <video autoplay muted loop playsinline class="herrero-img">
-        <source src="ACAPULCO (1).mp4" type="video/mp4">
-       
-    </video>
-</div>
+                <img src="https://cdn.phototourl.com/free/2026-07-17-994aa2d8-33b8-4065-a511-8923d2d48af7.jpg" alt="Maestro Herrero Trabajando el Acero" class="herrero-img">
+            </div>
             <p class="home-instruction">Toca el menú superior para explorar nuestros trabajos</p>
         </div>
     </section>
-  
-
     <!-- PUERTAS  -->
     <section class="page-section section-puertas">
         <div class="container">
@@ -1062,5 +1067,23 @@
         </div>
     </section>
 
+
+
+    <script>
+        const introSplash = document.getElementById('intro-splash');
+        const introVideo = document.getElementById('intro-video');
+
+        // Cuando el video termina de reproducirse, oculta el splash
+        introVideo.addEventListener('ended', function() {
+            introSplash.classList.add('ocultar');
+        });
+
+        // Opción de respaldo: si por alguna razón falla el video, oculta el intro tras 8 segundos
+        setTimeout(() => {
+            if (!introSplash.classList.contains('ocultar')) {
+                introSplash.classList.add('ocultar');
+            }
+        }, 8000);
+    </script>
 </body>
 </html>
