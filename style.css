@@ -697,7 +697,7 @@ body::after {
         width: 100% !important;
         height: auto !important;
     }
-    /* ==========================================
+/* ==========================================
    RESET Y AJUSTE TOTAL DEL VIDEO DE INTRO
    ========================================== */
 #intro-splash {
@@ -726,65 +726,81 @@ body::after {
     max-width: 100% !important;
     max-height: 85vh !important;
     max-height: 85dvh !important;
-    /* Impide que el video se estire o se deforme */
     object-fit: contain !important; 
     display: block !important;
     margin: auto !important;
 }
 
-/* ==========================================
-   OCULTAR SPLASH CORRECTAMENTE
-   ========================================== */
+/* OCULTAR INTRO CON TRANSICIÓN Y DISPLAY NONE */
 #intro-splash.ocultar {
     opacity: 0 !important;
     visibility: hidden !important;
     pointer-events: none !important;
-    display: none !important; /* Libera el espacio en pantalla por completo */
+    display: none !important;
 }
 
 /* ==========================================
-   VISIBILIDAD DE LA SECCIÓN DE INICIO (HOME)
+   SISTEMA DE NAVEGACIÓN (PAGINACIÓN CSS)
    ========================================== */
-/* Si estás usando radios para la navegación (CSS tabs), 
-   asegúrate de que la sección Home esté visible cuando corresponda */
-/* ==========================================
-   OCULTAR TODAS LAS SECCIONES POR DEFECTO
-   ========================================== */
+
+/* Ocultar todas las secciones de manera normal */
 .page-section {
     display: none;
 }
 
-/* ==========================================
-   MOSTRAR SOLO LA SECCIÓN SELECCIONADA
-   ========================================== */
-
-/* Cuando el radio 'view-home' está marcado -> Muestra Inicio */
-#view-home:checked ~ main .section-home,
-#view-home:checked ~ .section-home {
+/* Mostrar la sección según el radio seleccionado */
+#view-home:checked ~ .section-home,
+#view-home:checked ~ main .section-home {
     display: block !important;
 }
 
-/* Cuando el radio 'view-puertas' está marcado -> Muestra Puertas */
-#view-puertas:checked ~ main .section-puertas,
-#view-puertas:checked ~ .section-puertas {
+#view-puertas:checked ~ .section-puertas,
+#view-puertas:checked ~ main .section-puertas {
     display: block !important;
 }
 
-/* Cuando el radio 'view-reparaciones' está marcado -> Muestra Reparaciones */
-#view-reparaciones:checked ~ main .section-reparaciones,
-#view-reparaciones:checked ~ .section-reparaciones {
+#view-ventanas:checked ~ .section-ventanas,
+#view-ventanas:checked ~ main .section-ventanas {
     display: block !important;
 }
 
-/* Cuando el radio 'view-tejados' está marcado -> Muestra Tejados */
-#view-tejados:checked ~ main .section-tejados,
-#view-tejados:checked ~ .section-tejados {
+#view-protecciones:checked ~ .section-protecciones,
+#view-protecciones:checked ~ main .section-protecciones {
     display: block !important;
 }
 
-/* Agrega aquí los demás radios que tengas (por ejemplo, encargos especiales) */
-#view-especiales:checked ~ main .section-especiales,
-#view-especiales:checked ~ .section-especiales {
+#view-zaguanes:checked ~ .section-zaguanes,
+#view-zaguanes:checked ~ main .section-zaguanes {
+    display: block !important;
+}
+
+#view-escaleras:checked ~ .section-escaleras,
+#view-escaleras:checked ~ main .section-escaleras {
+    display: block !important;
+}
+
+#view-barandales:checked ~ .section-barandales,
+#view-barandales:checked ~ main .section-barandales {
+    display: block !important;
+}
+
+#view-tapas:checked ~ .section-tapas,
+#view-tapas:checked ~ main .section-tapas {
+    display: block !important;
+}
+
+#view-reparaciones:checked ~ .section-reparaciones,
+#view-reparaciones:checked ~ main .section-reparaciones {
+    display: block !important;
+}
+
+#view-tejados:checked ~ .section-tejados,
+#view-tejados:checked ~ main .section-tejados {
+    display: block !important;
+}
+
+#view-especiales:checked ~ .section-especiales,
+#view-especiales:checked ~ main .section-especiales {
     display: block !important;
 }
 }
