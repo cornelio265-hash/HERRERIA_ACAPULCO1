@@ -747,7 +747,44 @@ body::after {
    ========================================== */
 /* Si estás usando radios para la navegación (CSS tabs), 
    asegúrate de que la sección Home esté visible cuando corresponda */
-.section-home {
-    display: block !important; /* Fuerza a que aparezca la sección Inicio */
+/* ==========================================
+   OCULTAR TODAS LAS SECCIONES POR DEFECTO
+   ========================================== */
+.page-section {
+    display: none;
+}
+
+/* ==========================================
+   MOSTRAR SOLO LA SECCIÓN SELECCIONADA
+   ========================================== */
+
+/* Cuando el radio 'view-home' está marcado -> Muestra Inicio */
+#view-home:checked ~ main .section-home,
+#view-home:checked ~ .section-home {
+    display: block !important;
+}
+
+/* Cuando el radio 'view-puertas' está marcado -> Muestra Puertas */
+#view-puertas:checked ~ main .section-puertas,
+#view-puertas:checked ~ .section-puertas {
+    display: block !important;
+}
+
+/* Cuando el radio 'view-reparaciones' está marcado -> Muestra Reparaciones */
+#view-reparaciones:checked ~ main .section-reparaciones,
+#view-reparaciones:checked ~ .section-reparaciones {
+    display: block !important;
+}
+
+/* Cuando el radio 'view-tejados' está marcado -> Muestra Tejados */
+#view-tejados:checked ~ main .section-tejados,
+#view-tejados:checked ~ .section-tejados {
+    display: block !important;
+}
+
+/* Agrega aquí los demás radios que tengas (por ejemplo, encargos especiales) */
+#view-especiales:checked ~ main .section-especiales,
+#view-especiales:checked ~ .section-especiales {
+    display: block !important;
 }
 }
