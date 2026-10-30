@@ -539,6 +539,10 @@ body::after {
 #b1-f2:checked ~ .img-2,
 #b1-f3:checked ~ .img-3,
 
+#b2-f1:checked ~ .img-1,
+#b2-f2:checked ~ .img-2,
+#b2-f3:checked ~ .img-3,
+
 #z1-f1:checked ~ .img-1,
 #z1-f2:checked ~ .img-2,
 #z1-f3:checked ~ .img-3,
@@ -594,6 +598,9 @@ body::after {
 #b1-f1:checked ~ .flecha-1,
 #b1-f2:checked ~ .flecha-2,
 #b1-f3:checked ~ .flecha-3,
+#b2-f1:checked ~ .flecha-1,
+#b2-f2:checked ~ .flecha-2,     
+#b2-f3:checked ~ .flecha-3,
 
 #z1-f1:checked ~ .flecha-1,
 #z1-f2:checked ~ .flecha-2, 
